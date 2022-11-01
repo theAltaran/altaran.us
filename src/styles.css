@@ -6,11 +6,13 @@
 body {
  background-color: black;
   margin: 0;
+  background-image: url(background.png)
 }
 
 .container {
   margin: 1rem;
   text-align: center;
+  
   
 }
 
@@ -58,15 +60,10 @@ h1{
 }
 
 #aloeCam {
-  padding-top: 5px;
-  padding-left: 10px;
-  padding-bottom: 5px;
   align-items: center;
-  -moz-transform: scale(0.75, 0.75); 
-  -webkit-transform: scale(0.75, 0.75); 
-  -o-transform: scale(0.75, 0.75);
-  -ms-transform: scale(0.75, 0.75);
-  transform: scale(0.75, 0.75); 
-
-
+  -moz-transform: scale(0.50, 0.50); 
+  -webkit-transform: scale(0.50, 0.50); 
+  -o-transform: scale(0.50, 0.50);
+  -ms-transform: scale(0.50, 0.50);
+  transform: scale(0.50, 0.50); 
 }
