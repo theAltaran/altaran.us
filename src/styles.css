@@ -60,7 +60,6 @@ h1{
 }
 
 #aloeCam {
-  align-items: center;
   -moz-transform: scale(0.50, 0.50); 
   -webkit-transform: scale(0.50, 0.50); 
   -o-transform: scale(0.50, 0.50);
