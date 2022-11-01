@@ -4,7 +4,7 @@
 }
 
 body {
-
+  background-color: black;
   margin: 0;
 }
 
@@ -54,5 +54,5 @@ body {
 }
 
 h1{
-  color: aliceblue;
+  color: rgb(255, 255, 255);
 }
