@@ -58,6 +58,10 @@ h1{
 }
 
 #aloeCam {
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  align-items: center;
   -moz-transform: scale(0.75, 0.75); 
   -webkit-transform: scale(0.75, 0.75); 
   -o-transform: scale(0.75, 0.75);
