@@ -7,11 +7,13 @@ const Aloecam = () => (
     <h1>AloeCam</h1>
     <hr/>
     <br/>
-  <iframe title="aloecam" id="aloeCam" src="https://aloecam.ddns.net:6969" width="1280px" height="720px"></iframe>
+    <div className='cam1'>
+  <iframe title="aloecam" src="https://aloecam.ddns.net:6969" width="1284px" height="725px"></iframe>
     <a href="http://aloecam.ddns.net:5000/motorOn">
       <br/>
        <input className='button1' type="button" onClick="return false;" value="Dont Click This" />
     </a>
+    </div>
     </div>
   </div>
 );

@@ -1,4 +1,10 @@
-.Projects {}
+.Projects {
+  background-image: url(background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 1080px;
+}
 
 h1{
     color: rgb(55, 143, 130);

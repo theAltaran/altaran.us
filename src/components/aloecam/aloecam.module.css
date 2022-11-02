@@ -1,26 +1,13 @@
-.aloecam {
-    flex: auto;
+.Aloecam {
+  background-image: url(background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 1080px;
+
 }
-.button {
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-  }
-  
-.button1 {
-    background-color: white;
-    color: black;
-    border: 2px solid #4CAF50;
-  }
-  
-.button1:hover {
-    background-color: #4CAF50;
-    color: white;
-  }
+
+div.cam1 {
+  width: auto;
+ height: auto;
+}
