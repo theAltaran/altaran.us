@@ -1,5 +1,10 @@
 
 #aloeCam {
+  padding-left: 3px;
+  display: flex;
+  flex-direction: column;
+  width: 1930px;
+  height: 1090px;
     -moz-transform: scale(0.50, 0.50); 
     -webkit-transform: scale(0.50, 0.50); 
     -o-transform: scale(0.50, 0.50);
