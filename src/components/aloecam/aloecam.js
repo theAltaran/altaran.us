@@ -10,7 +10,7 @@ const Aloecam = () => (
        <input type="button" value="Dont Click This" />
     </a>
     <br/>
-    <iframe title="aloecam" id="aloeCam" src="https://aloecam.ddns.net:6969" width="1920px" height="1080px"></iframe>
+    <iframe title="aloecam" id="aloeCam" src="https://aloecam.ddns.net:6969" width="1500px" height="900px"></iframe>
     </div>
   </div>
 );
