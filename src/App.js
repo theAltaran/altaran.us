@@ -1,5 +1,5 @@
 import Navbar from "./Navbar"
-import AloeCam from "./pages/AloeCam"
+import AloeCam from "./components/aloecam/aloecam"
 import Home from "./pages/Home"
 import Projects from "./pages/Projects"
 import { Route, Routes } from "react-router-dom"
