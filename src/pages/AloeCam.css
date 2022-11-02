@@ -1,0 +1,8 @@
+
+#aloeCam {
+    -moz-transform: scale(0.50, 0.50); 
+    -webkit-transform: scale(0.50, 0.50); 
+    -o-transform: scale(0.50, 0.50);
+    -ms-transform: scale(0.50, 0.50);
+    transform: scale(0.50, 0.50); 
+  }

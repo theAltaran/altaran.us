@@ -12,22 +12,21 @@ body {
 .container {
   margin: 1rem;
   text-align: center;
-  
-  
 }
 
 .nav {
-  background-color: rgb(39, 8, 80);
+  background-color: rgb(14, 13, 13);
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
   gap: 2rem;
   padding: 0 1rem;
+  font-size: 1.2rem;
 }
 
 .site-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .nav ul {
@@ -48,21 +47,14 @@ body {
 }
 
 .nav li.active {
-  background-color: #555;
+  background-color: rgb(39, 8, 80);
 }
 
 .nav li:hover {
-  background-color: #777;
+  background-color: rgb(39, 8, 80);
 }
 
 h1{
-  color: rgb(255, 255, 255);
+  color: rgb(55, 143, 130);
 }
 
-#aloeCam {
-  -moz-transform: scale(0.50, 0.50); 
-  -webkit-transform: scale(0.50, 0.50); 
-  -o-transform: scale(0.50, 0.50);
-  -ms-transform: scale(0.50, 0.50);
-  transform: scale(0.50, 0.50); 
-}
