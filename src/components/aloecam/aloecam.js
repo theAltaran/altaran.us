@@ -1,6 +1,8 @@
 import React from 'react';
 import RandomButton from '../randomButton/randomButton';
 import styles from './aloecam.module.css';
+import IframeResizer from 'iframe-resizer-react';
+
 
 const Aloecam = () => (
   <div className={styles.Aloecam}>
@@ -8,7 +10,7 @@ const Aloecam = () => (
     <h1>AloeCam</h1>
     <hr/>
     <br/>
-  <iframe title="aloecam" src="https://aloecam.ddns.net:6969" width="1284px" height="725px"></iframe>
+  <IframeResizer className={styles.iframe1} title="aloecam" src="https://aloecam.ddns.net:6969"></IframeResizer>
   <br/>
        <RandomButton/>
     </div>

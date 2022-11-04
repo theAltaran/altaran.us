@@ -6,3 +6,9 @@
   min-height: 1080px;
 
 }
+
+.iframe1 {
+ width: 1px;
+ min-width: 68.5%;
+ height: 725px;
+}
