@@ -16,7 +16,7 @@ body {
 
 .nav {
   background-color: rgb(14, 13, 13);
-  color: white;
+  color: rgb(255, 255, 255);
   display: flex;
   justify-content: space-between;
   align-items: stretch;
