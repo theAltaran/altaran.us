@@ -4,7 +4,7 @@ import startMotor1 from '../aloecam/startmotor1';
 
 const RandomButton = () => (
   <div className={styles.RandomButton}>
-      <button id='button1' onClick={startMotor1}>
+      <button className={styles.button1} onClick={startMotor1}>
         Please Click Me Good
         </button>
   </div>
