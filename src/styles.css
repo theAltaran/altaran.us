@@ -47,11 +47,11 @@ body {
 }
 
 .nav li.active {
-  background-color: rgb(39, 8, 80);
+  background-color: rgb(55, 143, 130);
 }
 
 .nav li:hover {
-  background-color: rgb(39, 8, 80);
+  background-color: rgb(55, 143, 130);
 }
 
 
