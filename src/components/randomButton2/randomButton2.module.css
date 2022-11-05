@@ -3,10 +3,9 @@
    }
    
    .button1 {
-       box-shadow:inset 0px 1px 0px 0px #efdcfb;
     background: none;
        border-radius:6px;
-       border:2px solid #ffffff;
+       border:3px solid rgb(55, 143, 130);
        display:inline-block;
        cursor:pointer;
        color:#ffffff;
@@ -14,12 +13,11 @@
        font-size:15px;
        font-weight:bold;
        padding:10px 30px;
-       text-decoration:none;
-       text-shadow:0px 1px 0px #9752cc;
+
    }
    .button1:hover {
-       background:linear-gradient(to bottom, #bc80ea 5%, #dfbdfa 100%);
-       background-color:rgb(39, 8, 80);
+       background-color: rgb(55, 143, 130);
+ 
    }
    .button1:active {
        position:relative;
