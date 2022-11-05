@@ -7,11 +7,11 @@ import IframeResizer from 'iframe-resizer-react';
 const Aloecam = () => (
   <div className={styles.Aloecam}>
     <div>
-    <h1>AloeCam</h1>
-    <hr/>
+     <h1>AloeCam</h1>
+     <hr/>
     <br/>
-  <IframeResizer className={styles.iframe1} title="aloecam" src="https://aloecam.ddns.net:6969"></IframeResizer>
-  <br/>
+   <IframeResizer className={styles.iframe1} title="aloecam" src="https://aloecam.ddns.net:6969"></IframeResizer>
+    <br/>
        <RandomButton/>
     </div>
   </div>
