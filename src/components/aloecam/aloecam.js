@@ -6,13 +6,14 @@ import styles from './aloecam.module.css';
 
 const Aloecam = () => (
   <div className={styles.Aloecam}>
-    <div> 
     <br/>
-   {/* <IframeResizer className={styles.iframe1} title="aloecam" src="https://aloecam.ddns.net:6969"></IframeResizer> */}
+   <h1>Welcome to the home of the aloeCam</h1>
    <img className={styles.img1} src="https://aloecam.ddns.net:6969"alt='aloeCam'></img>
     <br/>
+    <br/>
        <RandomButton/>
-    </div>
+       {/* <div className={styles.rules}> */}
+       {/* </div> */}
   </div> 
 );
 

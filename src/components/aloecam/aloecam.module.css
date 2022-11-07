@@ -7,13 +7,18 @@
 
 }
 
-.iframe1 {
- width: 1px;
- min-width: 68.5%;
- height: 725px;
- 
-}
-
 .img1 {
   width: 720px;
+  border-color: rgb(255, 255, 255);
+ border-style: solid;
+ border-width: 2px;
+ padding: 1px;
+}
+
+.rules {
+  align-items: center;
+  text-align: center;
+  border-style: solid;
+  border-color: aliceblue;
+  width: 200px;
 }
