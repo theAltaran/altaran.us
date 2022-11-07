@@ -1,5 +1,7 @@
 import React from 'react';
 import RandomButton from '../randomButton/randomButton';
+import RandomButton3 from '../randomButton3/randomButton3';
+import RandomButton4 from '../randomButton4/randomButton4';
 import styles from './aloecam.module.css';
 // import IframeResizer from 'iframe-resizer-react';
 
@@ -12,6 +14,11 @@ const Aloecam = () => (
     <br/>
     <br/>
        <RandomButton/>
+    <br />  
+       <RandomButton3/>
+    <br />
+       <RandomButton4/>
+      
        {/* <div className={styles.rules}> */}
        {/* </div> */}
   </div> 
