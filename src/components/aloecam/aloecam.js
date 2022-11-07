@@ -14,10 +14,10 @@ const Aloecam = () => (
     <br/>
     <br/>
        <RandomButton/>
-    <br />  
+    {/* <br />  
        <RandomButton3/>
     <br />
-       <RandomButton4/>
+       <RandomButton4/> */}
       
        {/* <div className={styles.rules}> */}
        {/* </div> */}
