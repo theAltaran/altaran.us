@@ -12,7 +12,7 @@ const Aloecam = () => (
     <br/>
        <RandomButton/>
     </div>
-  </div>
+  </div> 
 );
 
 export default Aloecam;
