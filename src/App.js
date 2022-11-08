@@ -19,7 +19,7 @@ function App() {
           <Route path="/smApp" element={<SmApp />} />
         </Routes>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

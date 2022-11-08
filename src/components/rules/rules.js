@@ -6,9 +6,11 @@ const Rules = () => (
     Rules of the aloeCam
     <br/>
     <br/>
-    Lights are on from 8AM EST to 10PM EST
+    1. Lights are on from 8AM EST to 10PM EST
     <br/>
-    Marble Motor is on from 10AM EST to 10PM EST
+    <br/>
+    2. Marble Motor is on from 10AM EST to 10PM EST
+    
   </div>
 );
 
