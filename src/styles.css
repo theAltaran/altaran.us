@@ -1,17 +1,19 @@
 * {
   box-sizing: border-box;
-
 }
 
 body {
- background-color: black;
-  margin: 0;
-  
+  background-image: url(/public/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
 }
 
 .container {
   margin: 1rem;
   text-align: center;
+  
 }
 
 .nav {
