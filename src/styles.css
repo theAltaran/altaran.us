@@ -25,6 +25,8 @@ body {
   gap: 2rem;
   padding: 0 1rem;
   font-size: 1.2rem;
+  position: fixed;
+  width: 100%;
 }
 
 .site-title {
