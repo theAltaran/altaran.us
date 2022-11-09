@@ -15,7 +15,9 @@ const Aloecam = () => (
        <RandomButton/>
    <br/>
       <Rules/>
-   
+      <br/>
+      <br/>
+
   </div> 
 );
 
