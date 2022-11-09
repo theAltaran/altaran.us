@@ -9,6 +9,7 @@ import { Route, Routes } from "react-router-dom"
 function App() {
   return (
     <>
+      <div className="everything">
       <Navbar />
       <div className="container">
         <Routes>
@@ -18,6 +19,7 @@ function App() {
         </Routes>
       </div>
       {/* <Footer /> */}
+      </div>
     </>
   )
 }
