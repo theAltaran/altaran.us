@@ -14,9 +14,9 @@ const Aloecam = () => (
     <br/>
        <RandomButton/>
        <br/>
-       <iframe name="clickCounter" title="clickCounter" className={styles.img2} src="https://aloecamapi.herokuapp.com/clicks" alt='clickCounter'></iframe>
+       <iframe name="clickCounter" title="clickCounter" className={styles.iframe1} src="https://aloecamapi.herokuapp.com/clicks" alt='clickCounter'></iframe>
        <br/>
-       <iframe name="lastClickDate" title="lastClickDate" className={styles.img2} src="https://aloecamapi.herokuapp.com/lastClicked" alt='lastClickDate'></iframe>
+       <iframe name="lastClickDate" title="lastClickDate" className={styles.iframe2} src="https://aloecamapi.herokuapp.com/lastClicked" alt='lastClickDate'></iframe>
 
        <br/>
        <br/>

@@ -6,6 +6,8 @@ function clickity1() {
     Sound1('doh.mp3');
     var ifr = document.getElementsByName('clickCounter')[0];
     ifr.src = ifr.src;
+    var ifr2 = document.getElementsByName('lastClickDate')[0];
+    ifr2.src = ifr2.src;
   }
 
   export default clickity1;

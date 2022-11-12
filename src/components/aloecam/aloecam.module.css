@@ -13,8 +13,13 @@
   padding: 1px;
 }
 
-.img2 {
+.iframe1 {
   width: 135px;
+  height: 6vh;
+  background: none;
+}
+.iframe2 {
+  width: 300px;
   height: 5vh;
   background: none;
 }
