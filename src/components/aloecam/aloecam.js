@@ -1,7 +1,7 @@
 import React from 'react';
 import RandomButton from '../randomButton/randomButton';
 import styles from './aloecam.module.css';
-import Rules from '../../components/rules/rules'
+import Rules from '../../components/rules/rules';
 
 const Aloecam = () => (
   <div className={styles.Aloecam}>
@@ -13,7 +13,10 @@ const Aloecam = () => (
     <br/>
     <br/>
        <RandomButton/>
-   <br/>
+       <br/>
+       <img className={styles.img2} src="https://aloecam.ddns.net:5001/counter" alt='clickCounter'></img>
+       <br/>
+       <br/>
       <Rules/>
       <br/>
       <br/>

@@ -1,5 +1,6 @@
 .Aloecam {
   align-content: center;
+  
 }
 
 .img1 {
@@ -10,4 +11,9 @@
   border-style: solid;
   border-width: 2px;
   padding: 1px;
+}
+
+.img2 {
+  width: 500px;
+  background-color: white;
 }
