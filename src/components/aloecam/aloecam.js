@@ -16,6 +16,9 @@ const Aloecam = () => (
        <br/>
        <iframe name="clickCounter" title="clickCounter" className={styles.img2} src="https://aloecamapi.herokuapp.com/clicks" alt='clickCounter'></iframe>
        <br/>
+       <iframe name="lastClickDate" title="lastClickDate" className={styles.img2} src="https://aloecamapi.herokuapp.com/lastClicked" alt='lastClickDate'></iframe>
+
+       <br/>
        <br/>
       <Rules/>
       <br/>
