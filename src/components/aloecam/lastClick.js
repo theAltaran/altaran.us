@@ -19,7 +19,7 @@ const LastClick = () => {
   }, [])
 
   return (
-    <div className={styles.LastClick}>
+    <div className={styles.lastClick}>
       {lastClick.length > 0 && (
         <div>Timestamp of Last Click
           {lastClick.map(user => (
