@@ -17,8 +17,6 @@ const Clicks = () => {
     fetchData()
   }, [])
 
-
-
   return (
     <div className={styles.clicks}>
       {clicks.length > 0 && (
