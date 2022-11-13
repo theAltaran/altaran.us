@@ -17,9 +17,7 @@ const Clicks = () => {
     fetchData()
   }, [])
 
-  function refreshPage() {
-    window.location.reload(true);
-  }
+
 
   return (
     <div className={styles.clicks}>
@@ -28,7 +26,6 @@ const Clicks = () => {
           {clicks.map(user => (
             <p  key={user.id}>Drops to Date: {user.clicks}</p>
           ))}
-      <button onClick={refreshPage}>Click to reload!</button>
         </div>
       )}
     </div>
