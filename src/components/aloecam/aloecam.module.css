@@ -23,28 +23,47 @@
   height: 5vh;
   background: none;
 }
-
-.clicks {
-  width: auto;
+.stats1 {
+  width: 400px;
+  text-align: center;
   align-content: center;
+  background:none;
+  display: flex;
+  flex-direction: row;
+}
+.clicks {
+  display:inline-block;
+  margin-right: 2px;
   font-size: large;
-  height: 100px;
-  /* border-color: rgb(255, 255, 255);
-  border-style: solid;
-  border-width: 2px; */
+  height: 100%;
+  width: 200px;
   padding: 1px;
-  color: white;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+  background:linear-gradient(to bottom, #dfbdfa 5%, #270850 100%);
+  border-radius:6px;
+	border:1px solid #c584f3;
+  border-width: 3px;
+  
 }
 
 .lastClick {
-  width: auto;
-  align-content: center;
+  display:inline-block;
+  margin-left: 2px;
   font-size: large;
-  height: 100px;
-  /* border-color: rgb(255, 255, 255);
-  border-style: solid;
-  border-width: 2px; */
+  font-family:Arial;
+  height: 100%;
+  width: 200px;
   padding: 1px;
-  color: white;
-
+  color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+  background:linear-gradient(to bottom, #dfbdfa 5%, #270850 100%);
+  border-radius:6px;
+	border:1px solid #c584f3;
+  border-width: 3px;
 }
+

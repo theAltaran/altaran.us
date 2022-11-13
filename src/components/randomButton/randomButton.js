@@ -7,6 +7,8 @@ const RandomButton = () => (
       <button className={styles.button1} onClick={clickity1}>
         Drop It Like Its Hot
         </button>
+        <br/>
+        <br/>
   </div>
 );
 
