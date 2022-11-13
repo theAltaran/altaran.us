@@ -24,9 +24,9 @@ const Clicks = () => {
   return (
     <div className={styles.clicks}>
       {clicks.length > 0 && (
-        <div>Total Marble Drops
+        <div>
           {clicks.map(user => (
-            <p key={user.id}>{user.clicks}</p>
+            <p  key={user.id}>Drops to Date: {user.clicks}</p>
           ))}
       
         </div>

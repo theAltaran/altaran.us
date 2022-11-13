@@ -3,18 +3,16 @@ import RandomButton from '../randomButton/randomButton';
 import styles from './aloecam.module.css';
 import Rules from '../../components/rules/rules';
 import Clicks from './clicks';
-import LastClick from './lastClick';
+// import LastClick from './lastClick';
 import AloeCamFeed from './aloeCamFeed'
 
 
 const Aloecam = () => (
   <div className={styles.Aloecam}>
    <AloeCamFeed />
-   <RandomButton/>
    <Clicks />
-   <LastClick />
-
-    <br/>
+   <RandomButton/>
+      <br/>
     <br/>
   <Rules/>
     <br/>
