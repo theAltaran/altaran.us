@@ -23,3 +23,28 @@
   height: 5vh;
   background: none;
 }
+
+.clicks {
+  width: auto;
+  align-content: center;
+  font-size: large;
+  height: 100px;
+  /* border-color: rgb(255, 255, 255);
+  border-style: solid;
+  border-width: 2px; */
+  padding: 1px;
+  color: white;
+}
+
+.lastClick {
+  width: ;
+  align-content: center;
+  font-size: large;
+  height: 100px;
+  /* border-color: rgb(255, 255, 255);
+  border-style: solid;
+  border-width: 2px; */
+  padding: 1px;
+  color: white;
+
+}
