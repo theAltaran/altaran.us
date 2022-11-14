@@ -11,7 +11,6 @@ const Aloecam = () => (
   <div className={styles.Aloecam}>
    <AloeCamFeed />
    <Clicks />
-   <RandomButton/>
       <br/>
     <br/>
   <Rules/>

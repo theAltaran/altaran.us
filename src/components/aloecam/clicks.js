@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react"
 import styles from './aloecam.module.css';
+// import styles from '../randomButton/randomButton.module.css';
+// import clickity1 from "../randomButton/clickity";
+
+import startMotor1 from "../aloecam/startmotor1";
+import Sound1 from "../randomButton/sound1";
 
 
 
@@ -20,12 +25,19 @@ const Clicks = () => {
     fetchData()
   }, [])
 
+  function clickity2() {
+    startMotor1();
+    Sound1('doh.mp3');
+    fetchData();
+}
+
   return (
     <div className={styles.clicks}>
       {clicks.length > 0 && (
         <div>
           {clicks.map(user => (
-            <p  key={user.id}>Drops to Date: {user.clicks}<button onClick={fetchData}>Click to refresh</button></p>
+            <p>  <button className={styles.button1} onClick={clickity2}> Drop it LIke Its Hot</button>
+            {user.id}Drops to Date: {user.clicks}</p>
           ))}
         </div>
       )}
