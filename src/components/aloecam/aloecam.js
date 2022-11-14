@@ -1,5 +1,5 @@
 import React from 'react';
-import RandomButton from '../randomButton/randomButton';
+// import RandomButton from '../randomButton/randomButton';
 import styles from './aloecam.module.css';
 import Rules from '../../components/rules/rules';
 import Clicks from './clicks';
