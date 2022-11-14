@@ -19,6 +19,6 @@ const Aloecam = () => (
     <br/>
 
   </div> 
-);
+); 
 
 export default Aloecam;
