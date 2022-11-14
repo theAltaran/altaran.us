@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react"
 import styles from './aloecam.module.css';
 
+
+
+
 const Clicks = () => {
   const [clicks, setClicks] = useState([])
 
@@ -22,7 +25,7 @@ const Clicks = () => {
       {clicks.length > 0 && (
         <div>
           {clicks.map(user => (
-            <p  key={user.id}>Drops to Date: {user.clicks}</p>
+            <p  key={user.id}>Drops to Date: {user.clicks}<button onClick={fetchData}>Click to refresh</button></p>
           ))}
         </div>
       )}
