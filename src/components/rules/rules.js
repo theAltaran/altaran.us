@@ -1,8 +1,12 @@
 import React from 'react';
 import styles from './rules.module.css';
 
+
+
 const Rules = () => (
-  <div className={styles.Rules}>
+  // <div><button className={styles.button1} onClick={hideMoreInfo}></button>
+  // </div>
+  <div id="infoHide" className={styles.Rules}>
     Rules of the aloeCam
     <br/>
     <br/>
