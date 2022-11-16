@@ -6,7 +6,7 @@ function startMotor1() {
       }
     };    
     xhttp.open("GET", "https://aloecam.ddns.net:5000/motorOn", true);
-    xhttp.setRequestHeader('Access-Control-Allow-Origin', "https://aloecam.ddns.net/")
+    // xhttp.setRequestHeader('Access-Control-Allow-Origin', "https://aloecam.ddns.net/")
     xhttp.send();
   }
 
