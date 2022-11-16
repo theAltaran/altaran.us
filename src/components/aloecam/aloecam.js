@@ -20,10 +20,10 @@ const Aloecam = () => (
   <div className={styles.Aloecam}>
    <AloeCamFeed />
    
-   <Clicks />
+   {/* <Clicks /> */}
    <RandomButton />
     <br/>
-    <button className={styles.button1} onClick={hideMoreInfo}>aloeInfo</button>
+    {/* <button className={styles.button1} onClick={hideMoreInfo}>aloeInfo</button> */}
   <Rules/>
     <br/>
     <br/>
