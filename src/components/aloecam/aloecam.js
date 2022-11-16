@@ -19,8 +19,9 @@ function hideMoreInfo() {
 const Aloecam = () => (
   <div className={styles.Aloecam}>
    <AloeCamFeed />
-   <RandomButton />
+   
    <Clicks />
+   <RandomButton />
     <br/>
     <button className={styles.button1} onClick={hideMoreInfo}>aloeInfo</button>
   <Rules/>
