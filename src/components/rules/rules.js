@@ -7,6 +7,7 @@ const Rules = () => (
   // <div><button className={styles.button1} onClick={hideMoreInfo}></button>
   // </div>
   <div id="infoHide" className={styles.Rules}>
+    <hr/>
     Rules of the aloeCam
     <br/>
     <br/>
@@ -14,7 +15,10 @@ const Rules = () => (
     <br/>
     <br/>
     2. Marble Motor is on from 10AM EST to 10PM EST
-    
+    <br/>
+    <br/>
+    *tracking via IP for Now.  Will have more options in the future.
+    <hr/>
   </div>
 );
 
