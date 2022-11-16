@@ -5,7 +5,7 @@ function startMotor1() {
         console.log(this.responseText); //To check output while error[Optional]
       }
     };
-    xhttp.open("GET", "http://aloecam.ddns.net:5000/motorOn", true);
+    xhttp.open("GET", "https://aloecam.ddns.net:5000/motorOn", true);
     xhttp.send();
   }
 
