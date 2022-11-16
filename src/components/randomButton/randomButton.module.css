@@ -26,3 +26,15 @@
 	position:relative;
 	top:1px;
 }
+.apple {
+	border: none;
+	width: 30px;
+	height: auto;
+	margin-top: 20px;
+	background: none;
+
+}
+.apple2 {
+	height: 30px;
+	width: auto;
+}

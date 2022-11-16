@@ -1,5 +1,5 @@
 import React from 'react';
-// import RandomButton from '../randomButton/randomButton';
+import RandomButton from '../randomButton/randomButton';
 import styles from './aloecam.module.css';
 import Rules from '../../components/rules/rules';
 import Clicks from './clicks';
@@ -19,6 +19,7 @@ function hideMoreInfo() {
 const Aloecam = () => (
   <div className={styles.Aloecam}>
    <AloeCamFeed />
+   <RandomButton />
    <Clicks />
     <br/>
     <button className={styles.button1} onClick={hideMoreInfo}>aloeInfo</button>
