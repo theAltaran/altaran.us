@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react"
-import styles from './aloecam.module.css';
-import startMotor1 from "../aloecam/startmotor1";
-import Sound1 from "../randomButton/sound1";
+import styles from './aloeInfo.module.css';
 
 
 
@@ -10,7 +8,7 @@ const Clicks = () => {
   const [clicks, setClicks] = useState([])
 
   const fetchData = () => {
-    fetch("https://aloecamapi.herokuapp.com/clicks")
+    fetch("https://aloecamapi.herokuapp.com/top50")
       .then(response => {
         return response.json()
       })
@@ -22,19 +20,13 @@ const Clicks = () => {
     fetchData()
   }, [])
 
-  function clickity2() {
-    startMotor1();
-    Sound1('doh.mp3');
-    fetchData();
-}
 
   return (
     <div className={styles.clicks}>
       {clicks.length > 0 && (
         <div>
           {clicks.map(user => (
-            <p>  <button className={styles.button1} onClick={clickity2}> Drop it LIke Its Hot</button>
-            {user.id}Drops to Date: {user.clicks}</p>
+            <p>{user.clicks}</p>
           ))}
         </div>
       )}

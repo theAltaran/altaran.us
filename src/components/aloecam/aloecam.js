@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './aloecam.module.css';
-import Rules from '../../components/rules/rules';
+import AloeInfo from '../aloeInfo/aloeInfo';
 import Clicks from './clicks';
 import AloeCamFeed from './aloeCamFeed'
 import UserCount from './userCount';
@@ -21,7 +21,7 @@ const Aloecam = () => (
    
     <br/>
     <button className={styles.button1} onClick={hideMoreInfo}>aloeInfo</button>
-  <Rules/>
+  <AloeInfo/>
   <UserCount />
     <br/>
     <br/>
