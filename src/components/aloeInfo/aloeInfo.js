@@ -8,7 +8,7 @@ const AloeInfo = () => (
   // </div>
   <div id="infoHide" className={styles.Rules}>
     <hr/>
-    Top Clickers* and Their Last Click
+    {/* Top Clickers* and Their Last Click */}
   {/* <Clicks /> */}
 
     <hr/>
