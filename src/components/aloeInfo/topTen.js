@@ -26,7 +26,7 @@ const TopTenClicks = () => {
       {clicks.length > 0 && (
         <div>
           {clicks.map(user => (
-            <p>{user.clicks}</p>
+            <p>Clicks: {user.clicks} </p>
           ))}
         </div>
       )}

@@ -26,7 +26,7 @@ const TopTenDates = () => {
       {lastClick.length > 0 && (
         <div>
           {lastClick.map(user => (
-            <p>{user.lastClick}</p>
+            <p>Last Clicked:{user.lastClick}</p>
           ))}
         </div>
       )}
