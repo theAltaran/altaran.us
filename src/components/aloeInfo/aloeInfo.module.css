@@ -1,6 +1,29 @@
 .Rules {
     color: white;
     align-items: center;
-    position: ;
     display: none;
+    
+}
+
+.TopTen {
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.clicks {
+    float:left;
+     display:inline;
+      width: auto;
+      flex-direction: row;
+      align-items: center;
+    
+}
+
+.lastClick {
+    float:right;
+     display:inline;
+      width: auto;
+      flex-direction: row;
+      align-items: center;
 }

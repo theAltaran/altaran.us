@@ -4,8 +4,8 @@ import styles from './aloeInfo.module.css';
 
 
 
-const TopTenClicks = () => {
-  const [clicks, setClicks] = useState([])
+const TopTenDates = () => {
+  const [lastClick, setDate] = useState([])
 
   const fetchData = () => {
     fetch("https://aloecamapi.herokuapp.com/top10")
@@ -13,7 +13,7 @@ const TopTenClicks = () => {
         return response.json()
       })
       .then(data => {
-        setClicks(data)
+        setDate(data)
       })}
 
   useEffect(() => {
@@ -22,11 +22,11 @@ const TopTenClicks = () => {
 
 
   return (
-    <div className={styles.clicks}>
-      {clicks.length > 0 && (
+    <div className={styles.lastClick}>
+      {lastClick.length > 0 && (
         <div>
-          {clicks.map(user => (
-            <p>{user.clicks}</p>
+          {lastClick.map(user => (
+            <p>{user.lastClick}</p>
           ))}
         </div>
       )}
@@ -34,4 +34,4 @@ const TopTenClicks = () => {
   )
 }
 
-export default TopTenClicks
+export default TopTenDates

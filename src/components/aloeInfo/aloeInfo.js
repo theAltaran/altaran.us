@@ -1,16 +1,14 @@
 import React from 'react';
 import styles from './aloeInfo.module.css';
-// import Clicks from './topTen';
+import TopTenClicks from './topTen';
+import TopTenDates from './topTenDates';
+import UserCount from '../aloecam/userCount';
 
 
 const AloeInfo = () => (
-  // <div><button className={styles.button1} onClick={hideMoreInfo}></button>
-  // </div>
+  <div><UserCount/>
   <div id="infoHide" className={styles.Rules}>
-    <hr/>
-    {/* Top Clickers* and Their Last Click */}
-  {/* <Clicks /> */}
-
+    
     <hr/>
     Rules of the aloeCam
     <br/>
@@ -26,6 +24,13 @@ const AloeInfo = () => (
     <br/>
     *tracking via IP for Now.  Will have more options in the future.
     <hr/>
+    
+    <div className={styles.TopTen}>
+    Top 10 Clickers* and Their Last Click
+    <br/>
+  <TopTenClicks />  <TopTenDates /> <hr/>
+  </div>
+  </div>
   </div>
 );
 
