@@ -3,6 +3,8 @@ import styles from './aloecam.module.css';
 import AloeInfo from '../aloeInfo/aloeInfo';
 import Clicks from './clicks';
 import AloeCamFeed from './aloeCamFeed'
+import UserCount from './userCount'
+
 
 function hideMoreInfo() {
   var x = document.getElementById("infoHide");
@@ -16,7 +18,8 @@ function hideMoreInfo() {
 const Aloecam = () => (
   <div className={styles.Aloecam}>
    <AloeCamFeed />
-    <Clicks />   
+    <Clicks />  
+    <UserCount /> 
     <br/>
     <button className={styles.button1} onClick={hideMoreInfo}>aloeInfo</button>
   <AloeInfo/>

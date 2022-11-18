@@ -8,7 +8,7 @@ export default function Navbar() {
       </Link>
       <ul>
         <CustomLink to="/AloeCam">aloeCam</CustomLink>
-        <CustomLink to="/Projects">projects</CustomLink>
+        <CustomLink to="/alt">alt</CustomLink>
         {/* <CustomLink to="/smApp">sm</CustomLink> */}
       </ul>
     </nav>

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './projects.module.css';
+import styles from './alt.module.css';
 import IframeResizer from 'iframe-resizer-react';
 
 function hideNES() {
@@ -21,8 +21,9 @@ function hideGoogle() {
 
 }
 
-const Projects = () => (
-  <div className={styles.Projects}>    
+const Alt = () => (
+  <div className={styles.Alt}> 
+  <h5>All about me.....</h5>   
     <u1 className={styles.list1}>things Ive put time into... </u1>
     <li className={styles.listItems}>tons of google
     <button className={styles.button1} onClick={hideGoogle}>Open/Close</button></li>
@@ -51,4 +52,4 @@ const Projects = () => (
 );
 
 
-export default Projects;
+export default Alt;

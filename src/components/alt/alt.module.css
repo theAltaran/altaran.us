@@ -1,6 +1,6 @@
-.Projects {
-height: 560px;
-padding-top: 200px;
+.Alt {
+/* height: 560px; */
+padding-top: 50px;
 }
 
 h1{
@@ -8,8 +8,10 @@ h1{
    
   }
 h5{
-  color: rgb(255, 255, 255);
-  font-size: large;
+  color: white;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-decoration: underline;
+  font-size: 50px ;
 }
 
 .iframe1 {
@@ -17,7 +19,7 @@ height: 100%;
 }
 
 .NES {
-  height: 560px;
+  height: 570px;
   display: none;
 }
 
