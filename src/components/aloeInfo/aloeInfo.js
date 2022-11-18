@@ -1,12 +1,9 @@
 import React from 'react';
 import styles from './aloeInfo.module.css';
-import TopTenClicks from './topTen';
-import TopTenDates from './topTenDates';
-import UserCount from '../aloecam/userCount';
-
+import TopTenList from './topTenList';
 
 const AloeInfo = () => (
-  <div><UserCount/>
+  <div>
   <div id="infoHide" className={styles.Rules}>
     
     <hr/>
@@ -27,9 +24,9 @@ const AloeInfo = () => (
     <hr/>
     
     <div className={styles.TopTen}>
-    Top 10 Clickers* and Their Last Click
+    <p className={styles.TopTenHeading}>Top 10 Clickers* and Their Last Click</p>
     <br/>
-  <TopTenClicks />  <TopTenDates /> <hr/>
+    <TopTenList />
   </div>
   </div>
   </div>
