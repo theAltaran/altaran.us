@@ -7,7 +7,7 @@ const AloeInfo = () => (
   <div id="infoHide" className={styles.Rules}>
     
     <hr/>
-    Rules of the aloeCam
+    <p className={styles.RulesHeading}>Rules of the aloeCam</p>
     <br/>
     <br/>
     1. Lights are on from 8AM EST to 10PM EST / 1PM to 3:00AM UTC

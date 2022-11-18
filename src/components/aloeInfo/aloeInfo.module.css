@@ -3,6 +3,12 @@
     align-items: center;
     display: none;
     
+    
+}
+.RulesHeading {
+    font-size: larger;
+    text-decoration: underline;  
+    color: rgb(55, 143, 130);
 }
 
 .TopTen {
@@ -15,4 +21,6 @@ align-items: center;
 }
 .TopTenHeading {
     font-size: larger;
+    text-decoration: underline;  
+    color: rgb(55, 143, 130);
 }

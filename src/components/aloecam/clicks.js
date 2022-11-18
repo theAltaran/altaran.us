@@ -33,7 +33,7 @@ const Clicks = () => {
       {clicks.length > 0 && (
         <div>
           {clicks.map(user => (
-            <p>  <button className={styles.button1} onClick={clickity2}> Drop it LIke Its Hot</button>
+            <p className={styles.dropCount}>  <button className={styles.button1} onClick={clickity2}> Drop it LIke Its Hot</button>
             {user.id}Drops to Date: {user.clicks}</p>
           ))}
         </div>
