@@ -19,11 +19,10 @@ const Aloecam = () => (
   <div className={styles.Aloecam}>
    <AloeCamFeed />
     <Clicks />  
-    <UserCount /> 
     <br/>
     <button className={styles.button1} onClick={hideMoreInfo}>aloeInfo</button>
   <AloeInfo/>
-  
+  <UserCount /> 
     <br/>
     <br/>
 

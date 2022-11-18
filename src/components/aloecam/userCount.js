@@ -5,7 +5,7 @@ const UserCount = () => {
   const [aloeCam, setCount] = useState([])
 
   const fetchData = () => {
-    fetch("https://aloecamapi.herokuapp.com/userCount")
+    fetch("https://odd-plum-lemming-tie.cyclic.app/userCount")
       .then(response => {
         return response.json()
       })
