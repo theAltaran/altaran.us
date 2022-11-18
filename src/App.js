@@ -4,7 +4,9 @@ import Home from "./components/home/home"
 import Alt from "./components/alt/alt"
 import { Route, Routes } from "react-router-dom"
 import Footer from "./components/footer/footer"
-
+import ReactGA from 'react-ga';
+const TRACKING_ID = "G-K0MCHBR04W"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
 
 function App() {
   return (
