@@ -10,7 +10,7 @@ const Clicks = () => {
   const [clicks, setClicks] = useState([])
 
   const fetchData = () => {
-    fetch("https://aloecamapi.herokuapp.com/clicks")
+    fetch("https://odd-plum-lemming-tie.cyclic.app/clicks")
       .then(response => {
         return response.json()
       })
