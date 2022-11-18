@@ -16,10 +16,15 @@ h5{
 
 .iframe1 {
 height: 100%;
+/* border: white; */
+border-style:inset;
+border-color: black;
+border-width: 10px;
 }
 
 .NES {
-  height: 570px;
+
+  height: 545px;
   display: none;
 }
 
