@@ -63,7 +63,8 @@ body {
 }
 
 .footer {
-padding-top: 1000px;
+margin-top: 1000px;
+height: 50px;
   bottom: 0;
   width: 100%;
   text-align: center;
@@ -72,3 +73,4 @@ padding-top: 1000px;
 }
 
 
+ 
