@@ -18,6 +18,19 @@ const Clicks = () => {
         setClicks(data)
       })}
 
+//   const fetchData = () => {
+//   fetch("https://api.altaran.us/clicks", {
+//   "headers": {
+//     "Authorization": `Basic ${btoa('apiUser:3Wp6S3ntRUcBUpT')}`,
+//   },
+// })
+//       .then(response => {
+//         return response.json()
+//       })
+//       .then(data => {
+//         setClicks(data)
+//       })}
+
   useEffect(() => {
     fetchData()
   }, [])
