@@ -12,6 +12,8 @@ const AloeInfo = () => (
     <br/>
     1. Lights are on from 8AM EST to 10PM EST / 1PM to 3:00AM UTC
     <br/>
+    nightAloe feature should now be active
+    <br/>
     <br/>
     2. Marble Motor is on from 10AM EST to 10PM EST / 3PM to 3:00AM UTC
     <br/>
