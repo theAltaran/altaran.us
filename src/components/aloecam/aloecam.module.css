@@ -88,7 +88,8 @@
 }
 
 .dropCount{
-  color: rgb(55, 143, 130);
+  /* color: rgb(55, 143, 130);  */
+  color: white;
 }
 .button2 {
   box-shadow:inset 0px 1px 0px 0px #efdcfb;
