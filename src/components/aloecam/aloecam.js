@@ -2,9 +2,9 @@ import React from 'react';
 import styles from './aloecam.module.css';
 import AloeInfo from '../aloeInfo/aloeInfo';
 import Clicks from './clicks';
-import AloeCamFeed from './aloeCamFeed'
-import UserCount from './userCount'
-import startLights from './startLights';
+import AloeCamFeed from './aloeCamFeed';
+import UserCount from './userCount';
+
 
 function hideMoreInfo() {
   var x = document.getElementById("infoHide");
@@ -21,7 +21,6 @@ const Aloecam = () => (
    <AloeCamFeed />
     <Clicks />  
     <br/>
-    <button className={styles.button2} alt="lights" onclick={startLights}>?</button>
     <br />
     <button className={styles.button1} onClick={hideMoreInfo}>aloeInfo</button>
   <AloeInfo/>
