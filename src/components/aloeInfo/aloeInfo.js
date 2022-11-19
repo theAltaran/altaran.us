@@ -27,6 +27,7 @@ const AloeInfo = () => (
     <p className={styles.TopTenHeading}>Top 10 Clickers* and Their Last Click</p>
     <br/>
     <TopTenList />
+    <hr/>
   </div>
   </div>
   </div>
