@@ -22,7 +22,7 @@ const TopTenClicks = () => {
   }, [])
 
   const fetchData2 = () => {
-    fetch("https://odd-plum-lemming-tie.cyclic.app/top10")
+    fetch("https://api.altaran.us/top10")
       .then(response => {
         return response.json()
       })

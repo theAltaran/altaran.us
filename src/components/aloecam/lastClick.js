@@ -5,7 +5,7 @@ const LastClick = () => {
   const [lastClick, setClicks] = useState([])
 
   const fetchData = () => {
-    fetch("https://odd-plum-lemming-tie.cyclic.app/")
+    fetch("https://api.altaran.us/")
       .then(response => {
         return response.json()
       })

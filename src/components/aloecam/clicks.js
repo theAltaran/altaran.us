@@ -10,7 +10,7 @@ const Clicks = () => {
   const [clicks, setClicks] = useState([])
 
   const fetchData = () => {
-    fetch("https://odd-plum-lemming-tie.cyclic.app/clicks")
+    fetch("https://api.altaran.us/clicks")
       .then(response => {
         return response.json()
       })
