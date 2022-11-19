@@ -5,7 +5,7 @@ function lightsOn() {
         console.log(this.responseText); //To check output while error[Optional]
       }
     };    
-    xhttp.open("GET", "https://aloecam.ddns.net:5000/lightsOn", false);
+    xhttp.open("GET", "https://aloecam.ddns.net:5000/lightsOn", true);
     xhttp.send();
   }
   
