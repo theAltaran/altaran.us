@@ -1,14 +1,22 @@
 .Rules {
     color: white;
-    align-items: center;
     display: none;
+    align-items: center;
+    justify-content: center;
     
     
 }
 .RulesHeading {
+    height: 1vh;
     font-size: larger;
     text-decoration: underline;  
-    color: rgb(55, 143, 130);
+    font-weight:bolder;
+    /* color: rgb(55, 143, 130); */
+}
+.rulesCenter {
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
 }
 
 .TopTen {
@@ -20,7 +28,8 @@ align-items: center;
 
 }
 .TopTenHeading {
+    height: 1vh;
     font-size: larger;
-    text-decoration: underline;  
-    color: rgb(55, 143, 130);
+    text-decoration: underline; 
+    font-weight:bolder; 
 }
