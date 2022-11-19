@@ -9,7 +9,7 @@ const TopTenClicks = () => {
   const [lastClick, setDate] = useState([])
 
   const fetchData = () => {
-    fetch("https://aloecamapi.herokuapp.com/top10")
+    fetch("https://api.altaran.us/top10")
       .then(response => {
         return response.json()
       })
