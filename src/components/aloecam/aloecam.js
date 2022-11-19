@@ -4,7 +4,7 @@ import AloeInfo from '../aloeInfo/aloeInfo';
 import Clicks from './clicks';
 import AloeCamFeed from './aloeCamFeed'
 import UserCount from './userCount'
-
+import StartLights from './startLights';
 
 function hideMoreInfo() {
   var x = document.getElementById("infoHide");
@@ -15,11 +15,14 @@ function hideMoreInfo() {
   }
 }
 
+
 const Aloecam = () => (
   <div className={styles.Aloecam}>
    <AloeCamFeed />
     <Clicks />  
     <br/>
+    <button className={styles.button2} alt="lights" onclick={StartLights}>?</button>
+    <br />
     <button className={styles.button1} onClick={hideMoreInfo}>aloeInfo</button>
   <AloeInfo/>
   <UserCount /> 
