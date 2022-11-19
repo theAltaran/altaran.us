@@ -1,12 +1,9 @@
 .Alt {
-/* height: 560px; */
 padding-top: 50px;
 }
-
 h1{
     color: white;
-   
-  }
+ }
 h5{
   color: white;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -18,26 +15,21 @@ h5{
   width: 415px;
   height: 300px;
   border-color: blue;
-
-  }
-
+}
 .iframe2 {
 height: 100%;
 border-color: blue;
 }
-
 .NES {
 
   height: 545px;
   display: none;
 }
-
 .button1{
  background-color: blue;
  font-size:xx-small;
  font-weight: bold;
 }
-
 .list1 {
 	padding: 4px;
 	color: white;
@@ -57,6 +49,7 @@ display: none;
 }
 .Weirdstuff {
   display: none;
+  padding-bottom: 375px;
 }
 .nesRom {
   font-size: smaller;

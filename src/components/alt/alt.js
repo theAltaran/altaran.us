@@ -57,29 +57,9 @@ const Alt = () => (
    <p className={styles.nesControls}><img src="nesControls.png" alt="alt" /></p>  
   </div>
   <br/>
-  {/* Please ALt, find a better way to do this in the future.  This is darn right ugly. */}
 <div className={styles.Weirdstuff} id="weirdStuff">
     <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+
     </div>
   <li className={styles.listItems}>thing 2</li>
      <li className={styles.listItems}>thing 3</li>
