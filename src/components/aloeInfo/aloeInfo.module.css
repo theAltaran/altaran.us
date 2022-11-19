@@ -33,3 +33,10 @@ align-items: center;
     text-decoration: underline; 
     font-weight:bolder; 
 }
+.aloeInfo {
+    height: 1vh;
+    font-size: larger;
+    text-decoration: underline; 
+    font-weight:bolder; 
+
+}
