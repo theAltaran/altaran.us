@@ -19,8 +19,10 @@ function hideMoreInfo() {
 const Aloecam = () => (
   <div className={styles.Aloecam}>
    <AloeCamFeed />
+   <h6>The aloeCam team is aware of current video issues.  Should be corrected soon. </h6>
     <Clicks />  
     <br/>
+     
     <br />
     <button className={styles.button1} onClick={hideMoreInfo}>aloeInfo</button>
   <AloeInfo/>
