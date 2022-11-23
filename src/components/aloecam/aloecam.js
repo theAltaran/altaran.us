@@ -19,7 +19,7 @@ function hideMoreInfo() {
 const Aloecam = () => (
   <div className={styles.Aloecam}>
    <AloeCamFeed />
-   {/* <h6>The aloeCam team is aware of current video issues.  Should be corrected soon. </h6> */}
+   <h6>The aloeCam team is currently doing repairs.  Will be back soon. </h6>
     <Clicks />  
     <br/>
      
