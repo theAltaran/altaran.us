@@ -20,15 +20,9 @@ const Aloecam = () => (
   <div className={styles.Aloecam}>
    <AloeCamFeed />
    <br/>
-   <h6>From everyone at the aloeCam headquarters, 
-    <h6>we would like to wish you and your family
-      <h6>a Happy Thanksgiving!</h6>
-    </h6>
-   </h6>
     <Clicks />  
     <br/>
-     
-    <br />
+
     <button className={styles.button1} onClick={hideMoreInfo}>aloeInfo</button>
   <AloeInfo/>
   <UserCount /> 

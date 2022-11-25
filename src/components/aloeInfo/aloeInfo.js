@@ -3,7 +3,7 @@ import styles from './aloeInfo.module.css';
 import TopTenList from './topTenList';
 
 const AloeInfo = () => (
-  <div>
+  
   <div id="infoHide" className={styles.Rules}>
     <hr/>
     <p className={styles.aloeInfo}>aloeInfo</p>
@@ -26,19 +26,15 @@ const AloeInfo = () => (
     <br/>
     *tracking via IP for Now.  Will have more options in the future.
     <br/>
-    ** Can't have marbles dropping while Fiona and I sleep now can I?
-
-    
-    
+    ** Can't have marbles dropping while Fiona and I sleep now can I?     
     <hr/>
-    
-    <div className={styles.TopTen}>
+        <div className={styles.TopTen}>
     <p className={styles.TopTenHeading}>Top 10 Clickers* and Their Last Click</p>
     <br/>
     <TopTenList />
     <hr/>
   </div>
-  </div>
+
   </div>
 );
 
