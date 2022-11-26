@@ -7,7 +7,7 @@ const AloeInfo = () => (
   <div id="infoHide" className={styles.Rules}>
     <hr/>
     <p className={styles.aloeInfo}>aloeInfo</p>
-
+    <br/>
     Lights are on from 8AM EST to 10PM EST / 1PM to 3:00AM UTC
     <br/>
     nightAloe feature should now be active
@@ -26,7 +26,9 @@ const AloeInfo = () => (
     <br/>
     *tracking via IP for Now.  Will have more options in the future.
     <br/>
-    ** Can't have marbles dropping while Fiona and I sleep now can I?     
+    ** Can't have marbles dropping while Fiona and I sleep now can I? 
+    <br/>
+    <br/>    
     <hr/>
         <div className={styles.TopTen}>
     <p className={styles.TopTenHeading}>Top 10 Clickers* and Their Last Click</p>
