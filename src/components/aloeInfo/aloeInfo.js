@@ -31,7 +31,7 @@ const AloeInfo = () => (
     <br/>    
     <hr/>
         <div className={styles.TopTen}>
-    <p className={styles.TopTenHeading}>Top 10 Clickers* and Their Last Click</p>
+    <p className={styles.TopTenHeading}>Top 25 Clickers* and Their Last Click</p>
     <br/>
     <TopTenList />
     <hr/>
