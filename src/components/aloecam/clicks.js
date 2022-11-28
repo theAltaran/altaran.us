@@ -27,7 +27,8 @@ const Clicks = () => {
   function clickity2() {
     lightsOn();
     startMotor1();
-    Sound1('doh.mp3');
+    // Sound1('doh.mp3');
+    Sound1('mario.mp3');
     fetchData();
     
 }
