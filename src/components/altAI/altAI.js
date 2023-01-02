@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import styles from './altAI.module.css';
 const { Configuration, OpenAIApi } = require("openai");
 
 function ALTai() {
@@ -17,7 +17,7 @@ function ALTai() {
       model: "text-davinci-003",
       prompt: question,
       temperature: 0,
-      max_tokens: 60,
+      max_tokens: 1024,
       top_p: 1.0,
       frequency_penalty: 0.0,
       presence_penalty: 0.0,
@@ -26,16 +26,18 @@ function ALTai() {
     setEnable(false);
   }
   return (
-    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+    <div className={styles.AltAi}>
       <h1>Ask me anything</h1>
       <textarea name="" id="" cols="40" rows="10" onChange={(e) => setQuestion(e.target.value)}></textarea>
+      <br />
       <button onClick={handleSubmit}>Answer please!</button>
       {
         enable ? <h3>Loading...</h3> : null
       }
       <br />
+
       {
-        <h6 cols="30">{answer}</h6>
+        <h6>{answer}</h6>
       }
     </div>
   )
