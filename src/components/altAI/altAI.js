@@ -7,7 +7,7 @@ function ALTai() {
   const [answer, setAnswer] = useState("");
   const [enable, setEnable] = useState(false);
   const configuration = new Configuration({
-    apiKey: process.env.API_URL,
+    apiKey: process.env.API_KEY,
   });
   const openai = new OpenAIApi(configuration);
   const handleSubmit = async() => {
