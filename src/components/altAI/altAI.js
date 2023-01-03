@@ -37,7 +37,7 @@ function ALTai() {
       <br />
 
       {
-        <h6>{answer}</h6>
+        <h6 className={styles.response}>{answer}</h6>
       }
     </div>
   )
