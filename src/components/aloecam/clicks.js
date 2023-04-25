@@ -25,7 +25,7 @@ const Clicks = () => {
   }, [])
 
   function clickity2() {
-    lightsOn();
+    // lightsOn();
     startMotor1();
     // Sound1('hohoho.mp3')
     // Sound1('HappyNewYear.mp3')
