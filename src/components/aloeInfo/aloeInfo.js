@@ -8,7 +8,7 @@ const AloeInfo = () => (
     <hr/>
     <p className={styles.aloeInfo}>aloeInfo</p>
     <br/>
-    *as of 3/3/2023 the aloe has been moved temporarily to provide more light,
+    {/* *as of 3/3/2023 the aloe has been moved temporarily to provide more light,
     <br/>
      for some baby succulents.  Will be back soon.
      <br/>
@@ -16,7 +16,7 @@ const AloeInfo = () => (
     Lights are on from 8AM EST to 10PM EST / 1PM to 3:00AM UTC
     <br/>
     nightAloe feature should now be active
-    <br/>
+    <br/> */}
     <br/>
     Marble Motor is on from 10AM EST to 10PM EST / 3PM to 3:00AM UTC**
     <br/>
