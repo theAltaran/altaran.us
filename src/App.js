@@ -7,7 +7,7 @@ import { Route, Routes } from "react-router-dom"
 import Footer from "./components/footer/footer"
 import ReactGA from 'react-ga';
 import Space from "./components/space/space"
-const TRACKING_ID = "G-K0MCHBR04W"; // OUR_TRACKING_ID
+const TRACKING_ID = "G-PTVWK7LM8N"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
 
 function App() {
