@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import styles from './aloecam.module.css';
 import startMotor1 from "../aloecam/startmotor1";
 import Sound1 from "../randomButton/sound1";
-import lightsOn from "./lightsOn";
+// import lightsOn from "./lightsOn";
 
 
 

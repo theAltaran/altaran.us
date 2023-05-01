@@ -6,6 +6,7 @@ import ALTai from "./components/altAI/altAI"
 import { Route, Routes } from "react-router-dom"
 import Footer from "./components/footer/footer"
 import ReactGA from 'react-ga';
+import Space from "./components/space/space"
 const TRACKING_ID = "G-K0MCHBR04W"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Alt" element={<Alt />} />
           <Route path="/altAI" element={<ALTai />} />
+          <Route path="/space" element={<Space />} />
         </Routes>
       </div>
       
