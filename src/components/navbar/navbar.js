@@ -8,8 +8,8 @@ export default function Navbar() {
       </Link>
       <ul>
         <CustomLink to="/AloeCam">aloeCam</CustomLink>
-        <CustomLink to="/alt">alt</CustomLink>
         <CustomLink to="/space">space</CustomLink>
+        <CustomLink to="/alt">alt</CustomLink>
         <CustomLink to="/altAI">ai</CustomLink>
  
       </ul>
