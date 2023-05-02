@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import "./RocketLaunchSchedule.css";
 
 const RocketLaunchSchedule = () => {
@@ -30,23 +31,28 @@ const RocketLaunchSchedule = () => {
     return acc;
   }, {});
 
+  const pageTitle = "Alt's Rocket Launch Schedule";
+  const pageDescription = "Alt's current list of Rocket Launches";
+
   return (
     <div className="launch-schedule-container">
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+      </Helmet>
       {Object.keys(companies).map((company) => (
         <div key={company} className="company-container">
           <h6 className="company-heading">{company}</h6>
-          <div className="launch-list-wrapper">
-            <ul className="launch-list">
-              {companies[company].map((launch) => (
-                <li key={launch.name} className="launch-item">
-                  <span className="launch-name">{launch.name}</span>
-                  <span className="launch-date">
-                    {new Date(launch.date).toLocaleString()}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul className="launch-list">
+            {companies[company].map((launch) => (
+              <li key={launch.name} className="launch-item">
+                <span className="launch-name">{launch.name}</span>
+                <span className="launch-date">
+                  {new Date(launch.date).toLocaleString()}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       ))}
     </div>
