@@ -5,6 +5,10 @@ import Clicks from './clicks';
 import AloeCamFeed from './aloeCamFeed';
 import UserCount from './userCount';
 
+import ReactGA from 'react-ga4';
+const TRACKING_ID = "G-R2V8MCVCGE"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
+
 
 // function hideMoreInfo() {
 //   var x = document.getElementById("infoHide");

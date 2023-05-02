@@ -5,8 +5,9 @@ import Alt from "./components/alt/alt"
 import ALTai from "./components/altAI/altAI"
 import { Route, Routes } from "react-router-dom"
 import Footer from "./components/footer/footer"
-import ReactGA from 'react-ga';
 import Space from "./components/space/space"
+
+import ReactGA from 'react-ga4';
 const TRACKING_ID = "G-PTVWK7LM8N"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
 
