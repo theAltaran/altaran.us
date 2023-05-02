@@ -31,7 +31,7 @@ const RocketLaunchSchedule = () => {
     return acc;
   }, {});
 
-  const pageTitle = "Alt's Rocket Launch Schedule";
+  const pageTitle = "altaran.us";
   const pageDescription = "Alt's current list of Rocket Launches";
 
   return (
