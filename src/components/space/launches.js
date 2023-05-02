@@ -35,16 +35,18 @@ const RocketLaunchSchedule = () => {
       {Object.keys(companies).map((company) => (
         <div key={company} className="company-container">
           <h6 className="company-heading">{company}</h6>
-          <ul className="launch-list">
-            {companies[company].map((launch) => (
-              <li key={launch.name} className="launch-item">
-                <span className="launch-name">{launch.name}</span>
-                <span className="launch-date">
-                  {new Date(launch.date).toLocaleString()}
-                </span>
-              </li>
-            ))}
-          </ul>
+          <div className="launch-list-wrapper">
+            <ul className="launch-list">
+              {companies[company].map((launch) => (
+                <li key={launch.name} className="launch-item">
+                  <span className="launch-name">{launch.name}</span>
+                  <span className="launch-date">
+                    {new Date(launch.date).toLocaleString()}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       ))}
     </div>

@@ -8,7 +8,7 @@ ReactGA.initialize(TRACKING_ID);
 
 const Space = () => (
 <div className={styles.space}>
-
+<h1>Upcoming Space Launch Schedule</h1>
 <RocketLaunchSchedule />
 
 </div>
