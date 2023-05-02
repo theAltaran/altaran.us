@@ -1,51 +1,54 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import styles from './altAI.module.css';
+import * as openai from 'openai';
 
 import ReactGA from 'react-ga4';
 const TRACKING_ID = "G-QTQ0K2FD5Z"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
 
-const { Configuration, OpenAIApi } = require("openai");
-
 function ALTai() {
-  const [question, setQuestion] = useState("");
-  const [answer, setAnswer] = useState("");
+  const [question, setQuestion] = useState('');
+  const [answer, setAnswer] = useState('');
   const [enable, setEnable] = useState(false);
-  const configuration = new Configuration({
-    apiKey: process.env.REACT_APP_OPENAI_API_KEY,
-  });
-  const openai = new OpenAIApi(configuration);
-  const handleSubmit = async() => {
-    setAnswer("")
+
+  const openaiApiKey = process.env.REACT_APP_OPENAI_API_KEY;
+
+  const handleSubmit = async () => {
+    setAnswer('');
     setEnable(true);
-    const response = await openai.createCompletion({
-      model: "text-davinci-003",
-      prompt: question,
-      temperature: 0,
-      max_tokens: 1024,
-      top_p: 1.0,
-      frequency_penalty: 0.0,
-      presence_penalty: 0.0,
+    const prompt = `${question}\nAI answer:`;
+    const completions = await openai.complete({
+      apiKey: openaiApiKey,
+      engine: 'davinci-2-5-1',
+      prompt: prompt,
+      maxTokens: 1024,
+      n: 1,
+      stop: '\n',
     });
-    setAnswer(response.data.choices[0].text);
+    setAnswer(completions.choices[0].text);
     setEnable(false);
-  }
+  };
+
   return (
     <div className={styles.AltAi}>
       <h1>Ask me anything</h1>
-      <textarea name="" id="" cols="40" rows="10" onChange={(e) => setQuestion(e.target.value)}></textarea>
+      <textarea
+        name=""
+        id=""
+        cols="40"
+        rows="10"
+        onChange={(e) => setQuestion(e.target.value)}
+      ></textarea>
       <br />
       <button onClick={handleSubmit}>Answer please!</button>
-      {
-        enable ? <h3>Loading...</h3> : null
-      }
+      {enable ? <h3>Loading...</h3> : null}
       <br />
 
-      {
+      {answer ? (
         <h6 className={styles.response}>{answer}</h6>
-      }
+      ) : null}
     </div>
-  )
+  );
 }
 
-export default ALTai
+export default ALTai;

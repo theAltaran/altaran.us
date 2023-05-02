@@ -21,7 +21,7 @@ function App() {
           <Route path="/AloeCam" element={<AloeCam />} />
           <Route path="/" element={<Home />} />
           <Route path="/Alt" element={<Alt />} />
-          <Route path="/altAI" element={<ALTai />} />
+          {/* <Route path="/altAI" element={<ALTai />} /> */}
           <Route path="/space" element={<Space />} />
         </Routes>
       </div>
