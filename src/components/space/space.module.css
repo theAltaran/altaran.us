@@ -5,6 +5,8 @@
 }
 
 h1 {
-    color: rgb(55, 143, 130);
+    /* color: rgb(55, 143, 130); */
+    text-decoration: underline;
+    color: white;
 }
 
