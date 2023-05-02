@@ -9,12 +9,13 @@ const RocketLaunchSchedule = () => {
     const url = "https://lldev.thespacedevs.com/2.2.0/launch/upcoming/";
     const response = await fetch(url);
     const data = await response.json();
-    const launchList = data.results.map((launch) => {
+    const launchList = await Promise.all(data.results.map(async (launch) => {
       const name = launch.name;
-      const company = launch.launch_service_provider?.name || "Unknown";
+      const providerName = launch.launch_service_provider?.name || "Unknown";
       const date = launch.net;
-      return { name, rocket: { company }, date };
-    });
+      const providerHomepage = launch.launch_service_provider?.info_url || "#";
+      return { name, rocket: { providerName, providerHomepage }, date };
+    }));
     setLaunches(launchList);
   };
 
@@ -23,7 +24,7 @@ const RocketLaunchSchedule = () => {
   }, []);
 
   const companies = launches.reduce((acc, launch) => {
-    const company = launch.rocket.company;
+    const company = launch.rocket.providerName;
     if (!acc[company]) {
       acc[company] = [];
     }
@@ -42,7 +43,9 @@ const RocketLaunchSchedule = () => {
       </Helmet>
       {Object.keys(companies).map((company) => (
         <div key={company} className="company-container">
-          <h6 className="company-heading">{company}</h6>
+          <h6 className="company-heading">
+            <a href={companies[company][0].rocket.providerHomepage} target="_blank" rel="noreferrer">{company}</a>
+          </h6>
           <ul className="launch-list">
             {companies[company].map((launch) => (
               <li key={launch.name} className="launch-item">

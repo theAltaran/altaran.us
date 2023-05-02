@@ -1,0 +1,51 @@
+.launch-schedule-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .company-container {
+    color: rgb(55, 143, 130);
+    margin-top: 2rem;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 90%;
+    max-width: 800px;
+  }
+  
+  .company-heading {
+    margin-top: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .launch-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .launch-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.5rem;
+  }
+  
+  .launch-name {
+    font-weight: bold;
+    margin-right: 1rem;
+  }
+  
+  .launch-date {
+    font-style: italic;
+    font-size: 0.8rem;
+  }
+  
