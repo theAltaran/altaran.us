@@ -4,7 +4,9 @@
 
 body {
   background-color: black;
- 
+  min-height: 100vh; /* set the minimum height of the body to the height of the viewport */
+  display: flex; /* use flexbox to align the children */
+  flex-direction: column; /* stack the children vertically */
 }
 
 .container {
@@ -14,9 +16,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 100vh;
+  flex: 1; /* grow to fill the remaining space */
   width: 94vw;
-
 }
 
 .nav {
@@ -29,7 +30,7 @@ body {
   padding: 0 1rem;
   font-size: 1.2rem;
   /* font-size: 2vh; */
-  position:static;
+  position: static;
   width: 100%;
 }
 
@@ -62,15 +63,4 @@ body {
   background-color: rgb(55, 143, 130);
 }
 
-.footer {
-margin-top: 2000px;
-height: 50px;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  color:white;
-  display: inline-block;
-}
 
-
- 

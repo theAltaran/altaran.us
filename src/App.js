@@ -4,7 +4,7 @@ import Home from "./components/home/home"
 import Alt from "./components/alt/alt"
 // import ALTai from "./components/altAI/altAI"
 import { Route, Routes } from "react-router-dom"
-import Footer from "./components/footer/footer"
+// import Footer from "./components/footer/footer"
 import Space from "./components/space/space"
 
 import ReactGA from 'react-ga4';
@@ -27,7 +27,7 @@ function App() {
       </div>
       
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }
