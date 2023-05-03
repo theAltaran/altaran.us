@@ -3,6 +3,13 @@ import axios from 'axios';
 import NewsAPI from 'newsapi';
 
 const newsapi = new NewsAPI('e9d597d095384971a871e093fe5a0ab7');
+const reqOptions = {
+  'mode': 'cors', 
+  headers: {
+    'Access-Control-Allow-Origin': 'https://altaran.us'
+
+  }
+};
 
 const SpaceXNews = () => {
   const [articles, setArticles] = useState([]);
@@ -20,7 +27,8 @@ const SpaceXNews = () => {
           },
           headers: {
             'X-Api-Key': 'e9d597d095384971a871e093fe5a0ab7'
-          }
+          },
+          ...reqOptions
         });
 
         // Get random source id from the list of sources
