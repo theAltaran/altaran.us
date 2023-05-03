@@ -1,54 +1,58 @@
-import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
-import "./spaceXNews.css";
-// require("dotenv").config();
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import NewsAPI from 'newsapi';
+
+const newsapi = new NewsAPI('e9d597d095384971a871e093fe5a0ab7');
 
 const SpaceXNews = () => {
-  const [news, setNews] = useState([]);
-
-  const getNews = async () => {
-    const apiKey = process.env.REACT_APP_SpaceXNews_API_KEY;
-    const url = `https://api.goperigon.com/v1/all?apiKey=${apiKey}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    const filteredData = data.filter((item) =>
-      item.title.toLowerCase().includes("spacex")
-    );
-    const newsList = filteredData.map((newsItem) => {
-      const title = newsItem.title;
-      const date = newsItem.published_at;
-      const url = newsItem.url;
-      return { title, date, url };
-    });
-    setNews(newsList);
-  };
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    getNews();
+    const getSpaceXNews = async () => {
+      try {
+        // Get a list of news sources related to SpaceX
+        const sourcesResponse = await axios.get('https://newsapi.org/v2/sources', {
+          params: {
+            category: 'science',
+            language: 'en',
+            country: 'us',
+            q: 'spacex'
+          },
+          headers: {
+            'X-Api-Key': 'e9d597d095384971a871e093fe5a0ab7'
+          }
+        });
+
+        // Get random source id from the list of sources
+        const sources = sourcesResponse.data.sources;
+        const randomSource = sources[Math.floor(Math.random() * sources.length)];
+
+        // Fetch the top headlines from the random source
+        const newsResponse = await newsapi.v2.topHeadlines({
+          sources: randomSource.id,
+          q: 'spacex'
+        });
+
+        // Set the list of news articles
+        setArticles(newsResponse.articles);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    getSpaceXNews();
   }, []);
 
-  const pageTitle = "altaran.us";
-  const pageDescription = "Alt's random list of SpaceX news";
-
   return (
-    <div className="launch-schedule-container">
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-      </Helmet>
-      <div className="company-container">
-        {/* <h6 className="company-heading"></h6> */}
-        <ul className="launch-list">
-          {news.map((newsItem) => (
-            <li key={newsItem.title} className="launch-item">
-              <a href={newsItem.url} target="_blank" rel="noopener noreferrer" className="launch-name">{newsItem.title}</a>
-              <span className="launch-date">
-                {new Date(newsItem.date).toLocaleString()}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div>
+      {/* <h1>Random SpaceX News</h1> */}
+      <ul>
+        {articles.map(article => (
+          <li key={article.title}>
+            <a href={article.url} target="_blank" rel="noopener noreferrer">{article.title}</a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

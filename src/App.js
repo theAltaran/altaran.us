@@ -6,6 +6,7 @@ import Alt from "./components/alt/alt"
 import { Route, Routes } from "react-router-dom"
 // import Footer from "./components/footer/footer"
 import Space from "./components/space/space"
+import SpaceXNews from "./components/space/spaceXNews"
 
 import ReactGA from 'react-ga4';
 const TRACKING_ID = "G-PTVWK7LM8N"; // OUR_TRACKING_ID
@@ -23,6 +24,7 @@ function App() {
           <Route path="/Alt" element={<Alt />} />
           {/* <Route path="/altAI" element={<ALTai />} /> */}
           <Route path="/space" element={<Space />} />
+          <Route path="/spaceXNews" element={<SpaceXNews />} /> 
         </Routes>
       </div>
       
