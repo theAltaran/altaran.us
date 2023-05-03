@@ -1,14 +1,22 @@
-.Alt {
-padding-top: 50px;
+body {
+  margin: 0;
+  padding: 0;
 }
-h1{
-    color: white;
- }
-h5{
+
+.Alt {
+  padding-top: 50px;
+  height: 100vh;
+}
+
+h1 {
   color: white;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h5 {
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-decoration: underline;
-  font-size: 50px ;
+  font-size: 50px;
 }
 
 .iframe1 {
@@ -16,41 +24,48 @@ h5{
   height: 300px;
   border-color: blue;
 }
-.iframe2 {
-height: 100%;
-border-color: blue;
-}
-.NES {
 
+.iframe2 {
+  height: 100%;
+  border-color: blue;
+}
+
+.NES {
   height: 545px;
   display: none;
 }
-.button1{
- background-color: blue;
- font-size:xx-small;
- font-weight: bold;
+
+.button1 {
+  background-color: blue;
+  font-size: xx-small;
+  font-weight: bold;
 }
+
 .list1 {
-	padding: 4px;
-	color: white;
-	font-size:xx-large;
+  padding: 4px;
+  color: white;
+  font-size: xx-large;
 }
-.listItems
-{
-	padding: 4px;
-	color: white;
+
+.listItems {
+  padding: 4px;
+  color: white;
 }
+
 .google {
-	height: 100%;
-display: none;
+  height: 100%;
+  display: none;
 }
+
 .nesControls {
   height: 325px;
 }
+
 .Weirdstuff {
   display: none;
   padding-bottom: 375px;
 }
+
 .nesRom {
   font-size: smaller;
   color: white;
