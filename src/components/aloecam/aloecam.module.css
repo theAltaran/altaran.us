@@ -2,7 +2,9 @@
   align-content: center;
   
 }
-
+.center {
+  text-align: center;
+}
 .img1 {
   max-width: 75%;
   min-width: 300px;
