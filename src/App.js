@@ -8,9 +8,6 @@ import { Route, Routes } from "react-router-dom"
 import Space from "./components/space/space"
 import SpaceXNews from "./components/space/spaceXNews"
 
-import ReactGA from 'react-ga4';
-const TRACKING_ID = "G-PTVWK7LM8N"; // OUR_TRACKING_ID
-ReactGA.initialize(TRACKING_ID);
 
 function App() {
   return (

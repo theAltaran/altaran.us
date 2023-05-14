@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import styles from './altAI.module.css';
 import * as openai from 'openai';
 
-import ReactGA from 'react-ga4';
-const TRACKING_ID = "G-QTQ0K2FD5Z"; // OUR_TRACKING_ID
-ReactGA.initialize(TRACKING_ID);
+
 
 function ALTai() {
   const [question, setQuestion] = useState('');
