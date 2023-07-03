@@ -39,7 +39,7 @@ const RocketLaunchSchedule = () => {
   const [launches, setLaunches] = useState([]);
 
   const getLaunches = async () => {
-    const url = "https://ll.thespacedevs.com/2.2.0/launch/upcoming/";
+    const url = "https://lldev.thespacedevs.com/2.2.0/launch/upcoming/";
     const response = await fetch(url);
     const data = await response.json();
     const launchList = await Promise.all(
