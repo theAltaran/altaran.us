@@ -7,17 +7,15 @@ import SpaceXNews from './spaceXNews';
 const Space = () => (
   
   <div className={styles.space}>
-
+   <SpaceXNews />
     <h1>Upcoming Launch Schedule</h1>
+ 
     <RocketLaunchSchedule />
     <br />
     <br />
     <h1>Live Streams</h1>
     <div className={styles.videoBox}>
       <LiveStreamWall />
-    </div>
-    <div className={styles.spaceXNewsContainer}>
-      <SpaceXNews />
     </div>
   </div>
 );

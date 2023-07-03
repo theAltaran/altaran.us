@@ -12,7 +12,7 @@ body {
 .container {
   margin: 1rem;
   text-align: center;
-  background-image: url(/public/backgroundnew.png);
+  /* background-image: url(/public/backgroundnew.png); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

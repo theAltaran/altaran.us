@@ -5,26 +5,34 @@ import './spaceXNews.css'; // Import CSS file
 
 const TickerBar = ({ articles }) => {
   const [tickerIndex, setTickerIndex] = useState(0);
-  const [tickerText, setTickerText] = useState('');
 
   useEffect(() => {
     if (articles.length > 0) {
-      setTickerText(articles[tickerIndex].title);
       const interval = setInterval(() => {
-        setTickerIndex(prevIndex => (prevIndex + 1) % articles.length);
-      }, 3000); // Change the duration as needed
+        setTickerIndex((prevIndex) => (prevIndex + 1) % articles.length);
+      }, 5000); // Change the duration as needed
 
       return () => {
         clearInterval(interval);
       };
     }
-  }, [articles, tickerIndex]);
+  }, [articles]);
 
   return (
     <div className="ticker-bar">
-      <marquee className="ticker-text" behavior="scroll" direction="left">
-        {tickerText}
-      </marquee>
+      <div className="ticker-text-container">
+        {articles.map((article, index) => (
+          <a
+            key={index}
+            className={`ticker-text ${index === tickerIndex ? 'active' : ''}`}
+            href={article.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {article.title}
+          </a>
+        ))}
+      </div>
     </div>
   );
 };
@@ -39,8 +47,8 @@ const SpaceXNews = () => {
           params: {
             q: 'space',
             apiKey: process.env.REACT_APP_NEWSAPI_KEY,
-            pageSize: 10
-          }
+            pageSize: 10,
+          },
         });
 
         // Set the list of news articles
@@ -54,8 +62,8 @@ const SpaceXNews = () => {
   }, []);
 
   return (
-    <div className="container">
-      <h1>Space News</h1>
+    <div className="container2">
+      {/* <h1>Space News</h1> */}
       {articles.length > 0 ? (
         <TickerBar articles={articles} />
       ) : (

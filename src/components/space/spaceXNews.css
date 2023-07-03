@@ -1,0 +1,31 @@
+.ticker-bar {
+    overflow: hidden;
+    background-color: #000000;
+  }
+  
+  .ticker-text-container {
+    display: flex;
+  }
+  
+  .ticker-text {
+    display: flex;
+    transition: transform 1s ease-in-out;
+  }
+  
+  .ticker-item {
+    flex: 0 0 100%;
+    white-space: nowrap;
+    padding-right: 20px;
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
+  }
+  
+  .ticker-item:hover {
+    color: #ff0000;
+  }
+  
+  .container2 {
+    text-align: center;
+  }
+  
