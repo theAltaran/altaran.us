@@ -27,19 +27,15 @@
   max-width: 350px;
 }
 
-.videoImage {
-  width: 100%;
-  height: auto;
-}
-
 @media (max-width: 768px) {
   .videoContainer > a {
-    width: calc(50% - 10px);
+    width: calc(33.33% - 10px);
   }
 }
 
 @media (max-width: 480px) {
   .videoContainer > a {
-    width: 100%;
+    width: calc(50% - 10px);
   }
 }
+

@@ -48,32 +48,32 @@ const LiveStreamWall = () => {
     fetchLiveStreams();
   }, []);
 
+  const sortedChannelIds = ['UCSUu1lih2RifWkKtDOJdsBA', 'UCFwMITSkc1Fms6PoJoh1OUQ']; // Sorted channelIds
+
   return (
     <div className={styles.container}>
-      {Object.keys(channelTitles).map((channelId) => (
-        <div key={channelId}>
+      {sortedChannelIds.map((channelId) => (
+        <div key={channelId} className={styles.videoContainer}>
           <h2 className={styles.channelName}>{channelTitles[channelId]}</h2>
-          <div className={styles.videoContainer}>
-            {liveStreams
-              .filter((stream) => stream?.authorId === channelId && stream?.publishedText === 'Live' && stream?.liveNow)
-              .map((stream) => (
-                <a
-                  key={stream.videoId}
-                  href={`https://viewtube.altaran.duckdns.org/watch?v=${stream.videoId}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.videoLink}
-                >
-                  <img
-                    src={stream.videoThumbnails[0]?.url}
-                    alt={stream.title}
-                    className={styles.videoImage}
-                  />
-                  <p title={stream.title}>{stream.title.length > 30 ? `${stream.title.substring(0, 30)}...` : stream.title}</p>
-                  <p>{stream.viewCountText}</p> {/* Display additional information */}
-                </a>
-              ))}
-          </div>
+          {liveStreams
+            .filter((stream) => stream?.authorId === channelId && stream?.publishedText === 'Live' && stream?.liveNow)
+            .map((stream) => (
+              <a
+                key={stream.videoId}
+                href={`https://viewtube.altaran.duckdns.org/watch?v=${stream.videoId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.videoLink}
+              >
+                <img
+                  src={stream.videoThumbnails[0]?.url}
+                  alt={stream.title}
+                  className={styles.videoImage}
+                />
+                <p title={stream.title}>{stream.title.length > 30 ? `${stream.title.substring(0, 30)}...` : stream.title}</p>
+                <p>{stream.viewCountText}</p> {/* Display additional information */}
+              </a>
+            ))}
         </div>
       ))}
       {!error && (!liveStreams || liveStreams.length === 0) && (
