@@ -69,7 +69,7 @@ const LiveStreamWall = () => {
                     alt={stream.title}
                     className={styles.videoImage}
                   />
-                  <p>{stream.title}</p> {/* Display additional information */}
+                  <p title={stream.title}>{stream.title.length > 30 ? `${stream.title.substring(0, 30)}...` : stream.title}</p>
                   <p>{stream.viewCountText}</p> {/* Display additional information */}
                 </a>
               ))}
