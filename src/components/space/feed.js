@@ -14,7 +14,7 @@ const LiveStreamWall = () => {
 
     const fetchChannelTitle = async (channelId) => {
       try {
-        const response = await fetch(`https://viewtube.altaran.duckdns.org/api/channels/${channelId}/livestreams?sort=sort`);
+        const response = await fetch(`https://viewtube.altaran.duckdns.org/api/channels/${channelId}`);
         const data = await response.json();
         const title = data.title;
         setChannelTitles((prevChannelTitles) => ({
@@ -30,9 +30,9 @@ const LiveStreamWall = () => {
       try {
         const promises = channelIds.map(async (channelId) => {
           await fetchChannelTitle(channelId);
-          const response = await fetch(`https://viewtube.altaran.duckdns.org/api/channels/${channelId}/livestreams?sort=sort`);
+          const response = await fetch(`https://viewtube.altaran.duckdns.org/api/channels/${channelId}/livestreams?liveNow=true`);
           const data = await response.json();
-          return data;
+          return data.items; // Extract the "items" array from the response
         });
 
         const streams = await Promise.all(promises);
@@ -53,23 +53,27 @@ const LiveStreamWall = () => {
       {Object.keys(channelTitles).map((channelId) => (
         <div key={channelId}>
           <h2>Channel: {channelTitles[channelId]}</h2>
-          {liveStreams
-            .filter((stream) => stream?.authorId === channelId && stream?.publishedText === 'Live')
-            .map((stream) => (
-              <div key={stream.videoId} className={styles.videoContainer}>
+          <div className={styles.videoContainer}>
+            {liveStreams
+              .filter((stream) => stream?.authorId === channelId && stream?.publishedText === 'Live' && stream?.liveNow)
+              .map((stream) => (
                 <a
+                  key={stream.videoId}
                   href={`https://viewtube.altaran.duckdns.org/watch?v=${stream.videoId}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className={styles.videoLink}
                 >
                   <img
                     src={stream.videoThumbnails[0]?.url}
                     alt={stream.title}
                     className={styles.videoImage}
                   />
+                  <p>{stream.title}</p> {/* Display additional information */}
+                  <p>{stream.viewCountText}</p> {/* Display additional information */}
                 </a>
-              </div>
-            ))}
+              ))}
+          </div>
         </div>
       ))}
       {!error && (!liveStreams || liveStreams.length === 0) && (
