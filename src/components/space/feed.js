@@ -16,10 +16,10 @@ const LiveStreamWall = () => {
       try {
         const response = await fetch(`https://viewtube.altaran.duckdns.org/api/channels/${channelId}`);
         const data = await response.json();
-        const title = data.title;
+        const author = data.author;
         setChannelTitles((prevChannelTitles) => ({
           ...prevChannelTitles,
-          [channelId]: title,
+          [channelId]: author,
         }));
       } catch (error) {
         console.error(`Error fetching channel title for channel ${channelId}:`, error);
@@ -52,7 +52,7 @@ const LiveStreamWall = () => {
     <div className={styles.container}>
       {Object.keys(channelTitles).map((channelId) => (
         <div key={channelId}>
-          <h2>Channel: {channelTitles[channelId]}</h2>
+          <h2 className={styles.channelName}>{channelTitles[channelId]}</h2>
           <div className={styles.videoContainer}>
             {liveStreams
               .filter((stream) => stream?.authorId === channelId && stream?.publishedText === 'Live' && stream?.liveNow)
