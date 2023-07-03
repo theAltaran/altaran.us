@@ -14,6 +14,11 @@ const companies = [
     logo: "https://logo.clearbit.com/rocketlabusa.com"
   },
   {
+    name: "Virgin Galactic",
+    homepage: "https://www.virgingalactic.com/",
+    logo: "https://companieslogo.com/img/orig/SPCE_BIG-0ce5e6e6.png"
+  },
+  {
     name: "Russian Federal Space Agency",
     homepage: "http://en.roscosmos.ru/",
     logo: "https://logos-download.com/wp-content/uploads/2022/01/Roscosmos_Logo-700x466.png"
@@ -28,6 +33,7 @@ const companies = [
     homepage: "http://english.spacechina.com/",
     logo: "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/logo/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png"
   }
+
 
 
 ];
