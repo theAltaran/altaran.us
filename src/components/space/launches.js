@@ -33,9 +33,6 @@ const companies = [
     homepage: "http://english.spacechina.com/",
     logo: "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/logo/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png"
   }
-
-
-
 ];
 
 const RocketLaunchSchedule = () => {
@@ -64,20 +61,23 @@ const RocketLaunchSchedule = () => {
   const pageTitle = "altaran.us";
   const pageDescription = "Alt's current list of Rocket Launches";
 
+  // Filter out companies without any launches
+  const filteredCompanies = companies.filter((company) =>
+    launches.some((launch) => launch.rocket.providerName === company.name)
+  );
+
   return (
     <div className="launch-schedule-container">
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
       </Helmet>
-      {companies.map((company) => (
+      {filteredCompanies.map((company) => (
         <div key={company.name} className="company-container">
           <div className="company-logo">
             <img src={company.logo} alt={`${company.name} logo`} />
           </div>
-
           <h6 className="company-heading">
-
             <a href={company.homepage} target="_blank" rel="noopener noreferrer">
               {company.name}
             </a>
