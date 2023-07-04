@@ -64,6 +64,14 @@ const LiveStreamWall = () => {
       {sortedChannelIds.map((channelId) => (
         <div key={channelId} className={styles.videoContainer}>
           <h2 className={styles.channelName}>{channelTitles[channelId]}</h2>
+          <div className={styles.openButtonContainer}>
+            <button
+              className={styles.openButton}
+              onClick={() => handleOpenPopup(channelId)}
+            >
+              Open
+            </button>
+          </div>
           {liveStreams
             .filter((stream) => stream?.authorId === channelId && stream?.publishedText === 'Live' && stream?.liveNow)
             .map((stream) => (
@@ -83,12 +91,6 @@ const LiveStreamWall = () => {
                 <p>{stream.viewCountText}</p>
               </a>
             ))}
-          <button
-            className={styles.openButton}
-            onClick={() => handleOpenPopup(channelId)}
-          >
-            Open
-          </button>
         </div>
       ))}
       {!error && (!liveStreams || liveStreams.length === 0) && (
@@ -105,12 +107,13 @@ const LiveStreamWall = () => {
               {liveStreams
                 .filter((stream) => stream?.authorId === selectedChannel && stream?.publishedText === 'Live' && stream?.liveNow)
                 .map((stream) => (
-                  <video
+                  <iframe
                     key={stream.videoId}
+                    title={stream.title}
                     src={`https://viewtube.altaran.duckdns.org/watch?v=${stream.videoId}`}
-                    autoPlay
-                    muted
-                  />
+                    frameBorder="0"
+                    allowFullScreen
+                  ></iframe>
                 ))}
             </div>
           </div>

@@ -2,6 +2,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .channelName {
@@ -21,14 +24,12 @@
   margin-top: 10px;
 }
 
-.channelInfo {
+.openButtonContainer {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.channelInfo .openButton {
-  margin-top: 10px;
+  justify-content: center;
+  margin-top: -30px; /* Update this value to make the button closer */
+  margin-bottom: 20px;
 }
 
 .videoContainer > a {
@@ -38,7 +39,6 @@
 }
 
 .openButton {
-  margin-top: 10px;
   padding: 10px 20px;
   background-color: rgb(55, 143, 130);
   color: #fff;
