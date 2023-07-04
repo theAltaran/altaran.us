@@ -59,11 +59,19 @@ const LiveStreamWall = () => {
     setSelectedChannel(null);
   };
 
+  const getTruncatedTitle = (title) => {
+    if (title.length > 25) {
+      return `${title.substring(0, 25)}...`;
+    }
+    return title;
+  };
+
   return (
     <div className={styles.container}>
       {sortedChannelIds.map((channelId) => (
         <div key={channelId} className={styles.videoContainer}>
           <h2 className={styles.channelName}>{channelTitles[channelId]}</h2>
+          {/* Commented out the open button
           <div className={styles.openButtonContainer}>
             <button
               className={styles.openButton}
@@ -72,24 +80,31 @@ const LiveStreamWall = () => {
               Open
             </button>
           </div>
+          */}
           {liveStreams
             .filter((stream) => stream?.authorId === channelId && stream?.publishedText === 'Live' && stream?.liveNow)
             .map((stream) => (
-              <a
-                key={stream.videoId}
-                href={`https://viewtube.altaran.duckdns.org/watch?v=${stream.videoId}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.videoLink}
-              >
-                <img
-                  src={stream.videoThumbnails[0]?.url}
-                  alt={stream.title}
-                  className={styles.videoImage}
-                />
-                <p title={stream.title}>{stream.title.length > 25 ? `${stream.title.substring(0, 25)}...` : stream.title}</p>
-                <p>{stream.viewCountText}</p>
-              </a>
+              <div key={stream.videoId} className={styles.videoItem}>
+                <a
+                  href={`https://viewtube.altaran.duckdns.org/watch?v=${stream.videoId}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.videoLink}
+                >
+                  <iframe
+                    title={stream.title}
+                    src={`https://viewtube.altaran.duckdns.org/embed/${stream.videoId}`}
+                    frameBorder="0"
+                    allowFullScreen
+                  ></iframe>
+                  <p
+                    title={stream.title}
+                    className={styles.videoTitle}
+                  >
+                    {getTruncatedTitle(stream.title)}
+                  </p>
+                </a>
+              </div>
             ))}
         </div>
       ))}
