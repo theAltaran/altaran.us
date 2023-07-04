@@ -5,6 +5,7 @@ const LiveStreamWall = () => {
   const [liveStreams, setLiveStreams] = useState([]);
   const [channelTitles, setChannelTitles] = useState({});
   const [error, setError] = useState(false);
+  const [selectedChannel, setSelectedChannel] = useState(null);
 
   useEffect(() => {
     const channelIds = [
@@ -50,6 +51,14 @@ const LiveStreamWall = () => {
 
   const sortedChannelIds = ['UCSUu1lih2RifWkKtDOJdsBA', 'UCFwMITSkc1Fms6PoJoh1OUQ']; // Sorted channelIds
 
+  const handleOpenPopup = (channelId) => {
+    setSelectedChannel(channelId);
+  };
+
+  const handleClosePopup = () => {
+    setSelectedChannel(null);
+  };
+
   return (
     <div className={styles.container}>
       {sortedChannelIds.map((channelId) => (
@@ -71,13 +80,41 @@ const LiveStreamWall = () => {
                   className={styles.videoImage}
                 />
                 <p title={stream.title}>{stream.title.length > 25 ? `${stream.title.substring(0, 25)}...` : stream.title}</p>
-                <p>{stream.viewCountText}</p> {/* Display additional information */}
+                <p>{stream.viewCountText}</p>
               </a>
             ))}
+          <button
+            className={styles.openButton}
+            onClick={() => handleOpenPopup(channelId)}
+          >
+            Open
+          </button>
         </div>
       ))}
       {!error && (!liveStreams || liveStreams.length === 0) && (
         <div>No live streams available</div>
+      )}
+
+      {selectedChannel && (
+        <div className={styles.popup}>
+          <div className={styles.popupContent}>
+            <button className={styles.closeButton} onClick={handleClosePopup}>
+              Close
+            </button>
+            <div className={styles.videoPlayer}>
+              {liveStreams
+                .filter((stream) => stream?.authorId === selectedChannel && stream?.publishedText === 'Live' && stream?.liveNow)
+                .map((stream) => (
+                  <video
+                    key={stream.videoId}
+                    src={`https://viewtube.altaran.duckdns.org/watch?v=${stream.videoId}`}
+                    autoPlay
+                    muted
+                  />
+                ))}
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

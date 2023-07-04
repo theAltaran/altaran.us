@@ -2,12 +2,12 @@ import React from 'react';
 import styles from './space.module.css';
 import LiveStreamWall from './feed';
 import RocketLaunchSchedule from "./launches"
-import SpaceXNews from './spaceXNews';
+// import SpaceXNews from './spaceXNews';
 
 const Space = () => (
   
   <div className={styles.space}>
-   <SpaceXNews />
+   {/* <SpaceXNews /> */}
     <h1>Upcoming Launch Schedule</h1>
  
     <RocketLaunchSchedule />
