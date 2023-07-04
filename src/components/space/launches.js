@@ -32,6 +32,11 @@ const companies = [
     name: "China Aerospace Science and Technology Corporation",
     homepage: "http://english.spacechina.com/",
     logo: "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/logo/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png"
+  },
+  {
+    name: "Arianespace",
+    homepage: "https://www.arianespace.com/",
+    // logo: "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/logo/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png"
   }
 ];
 
