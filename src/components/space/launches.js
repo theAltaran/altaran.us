@@ -36,7 +36,7 @@ const companies = [
   {
     name: "Arianespace",
     homepage: "https://www.arianespace.com/",
-    // logo: "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/logo/china2520aerospace2520science2520and2520technology2520corporation_logo_20220826093937.png"
+    logo: "https://www.arianespace.com/wp-content/uploads/2022/05/arianspace-logo-4.svg"
   }
 ];
 
