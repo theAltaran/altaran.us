@@ -27,15 +27,14 @@
   max-width: 350px;
 }
 
-@media (max-width: 768px) {
-  .videoContainer > a {
-    width: calc(33.33% - 10px);
-  }
-}
-
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
   .videoContainer > a {
     width: calc(50% - 10px);
   }
 }
 
+@media (max-width: 768px) {
+  .videoContainer > a {
+    width: calc(100% - 10px);
+  }
+}
