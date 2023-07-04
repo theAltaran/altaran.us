@@ -3,13 +3,15 @@ import styles from './space.module.css';
 import LiveStreamWall from './feed';
 import RocketLaunchSchedule from "./launches"
 // import SpaceXNews from './spaceXNews';
+import StarShipStatus from './starShipStatus';
 
 const Space = () => (
-  
   <div className={styles.space}>
-   {/* <SpaceXNews /> */}
+    {/* <SpaceXNews /> */}
+    <div className={styles.starShipStatusContainer}>
+      <StarShipStatus />
+    </div>
     <h1>Upcoming Launch Schedule</h1>
- 
     <RocketLaunchSchedule />
     <br />
     <br />
