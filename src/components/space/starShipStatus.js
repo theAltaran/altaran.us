@@ -20,7 +20,7 @@ const StarShipStatus = () => {
 
   return (
     <div className="starship-ticker">
-      <h2 className="updates-label">StarShip Updates</h2>
+      <h1 className="updates-label">StarShip Updates</h1>
       <div className="ticker-container">
         {updates.map((update) => (
           <div key={update.id} className="ticker-box">
