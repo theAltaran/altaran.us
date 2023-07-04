@@ -73,21 +73,23 @@ const LiveStreamWall = () => {
             </button>
           </div>
           {liveStreams
-            .filter(
-              (stream) =>
-                stream?.authorId === channelId &&
-                stream?.publishedText === 'Live' &&
-                stream?.liveNow
-            )
+            .filter((stream) => stream?.authorId === channelId && stream?.publishedText === 'Live' && stream?.liveNow)
             .map((stream) => (
-              <iframe
+              <a
                 key={stream.videoId}
-                title={stream.title}
-                src={`https://viewtube.altaran.duckdns.org/embed/${stream.videoId}`}
-                frameBorder="0"
-                allowFullScreen
-                className={styles.videoPlayer}
-              ></iframe>
+                href={`https://viewtube.altaran.duckdns.org/watch?v=${stream.videoId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.videoLink}
+              >
+                <img
+                  src={stream.videoThumbnails[0]?.url}
+                  alt={stream.title}
+                  className={styles.videoImage}
+                />
+                <p title={stream.title}>{stream.title.length > 25 ? `${stream.title.substring(0, 25)}...` : stream.title}</p>
+                <p>{stream.viewCountText}</p>
+              </a>
             ))}
         </div>
       ))}
@@ -103,12 +105,7 @@ const LiveStreamWall = () => {
             </button>
             <div className={styles.videoPlayer}>
               {liveStreams
-                .filter(
-                  (stream) =>
-                    stream?.authorId === selectedChannel &&
-                    stream?.publishedText === 'Live' &&
-                    stream?.liveNow
-                )
+                .filter((stream) => stream?.authorId === selectedChannel && stream?.publishedText === 'Live' && stream?.liveNow)
                 .map((stream) => (
                   <iframe
                     key={stream.videoId}
