@@ -110,7 +110,7 @@ const LiveStreamWall = () => {
                   <iframe
                     key={stream.videoId}
                     title={stream.title}
-                    src={`https://viewtube.altaran.duckdns.org/watch?v=${stream.videoId}`}
+                    src={`https://viewtube.altaran.duckdns.org/embed/${stream.videoId}`}
                     frameBorder="0"
                     allowFullScreen
                   ></iframe>
