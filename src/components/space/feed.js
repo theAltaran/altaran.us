@@ -11,6 +11,7 @@ const LiveStreamWall = () => {
     const channelIds = [
       'UCSUu1lih2RifWkKtDOJdsBA',
       'UCFwMITSkc1Fms6PoJoh1OUQ',
+      'UC6uKrU_WqJ1R2HMTY3LIx5Q',
     ];
 
     const fetchChannelTitle = async (channelId) => {
@@ -49,7 +50,7 @@ const LiveStreamWall = () => {
     fetchLiveStreams();
   }, []);
 
-  const sortedChannelIds = ['UCSUu1lih2RifWkKtDOJdsBA', 'UCFwMITSkc1Fms6PoJoh1OUQ']; // Sorted channelIds
+  const sortedChannelIds = ['UCSUu1lih2RifWkKtDOJdsBA', 'UCFwMITSkc1Fms6PoJoh1OUQ', 'UC6uKrU_WqJ1R2HMTY3LIx5Q']; // Sorted channelIds
 
   const handleOpenPopup = (channelId) => {
     setSelectedChannel(channelId);
