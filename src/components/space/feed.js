@@ -87,14 +87,14 @@ const LiveStreamWall = () => {
             .map((stream) => (
               <div key={stream.videoId} className={styles.videoItem}>
                 <a
-                  href={`https://viewtube.altaran.duckdns.org/watch?v=${stream.videoId}`}
+                  href={`https://youtube.com/watch?v=${stream.videoId}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.videoLink}
                 >
                   <iframe
                     title={stream.title}
-                    src={`https://viewtube.altaran.duckdns.org/embed/${stream.videoId}`}
+                    src={`https://youtube.com/embed/${stream.videoId}`}
                     frameBorder="0"
                     allowFullScreen
                   ></iframe>
@@ -126,7 +126,7 @@ const LiveStreamWall = () => {
                   <iframe
                     key={stream.videoId}
                     title={stream.title}
-                    src={`https://viewtube.altaran.duckdns.org/embed/${stream.videoId}`}
+                    src={`https://youtube.com/embed/${stream.videoId}`}
                     frameBorder="0"
                     allowFullScreen
                   ></iframe>
