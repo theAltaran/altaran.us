@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styles from './altAI.module.css';
 import * as openai from 'openai';
 
+
+
 function ALTai() {
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
@@ -13,13 +15,15 @@ function ALTai() {
     setAnswer('');
     setEnable(true);
     const prompt = `${question}\nAI answer:`;
-    const response = await openai.ChatCompletion.create({
-      engine: 'text-davinci-003', // GPT-3.5-turbo engine
+    const completions = await openai.complete({
+      apiKey: openaiApiKey,
+      engine: 'davinci-2-5-1',
       prompt: prompt,
-      max_tokens: 250,
+      maxTokens: 1024,
+      n: 1,
       stop: '\n',
     });
-    setAnswer(response.choices[0].text);
+    setAnswer(completions.choices[0].text);
     setEnable(false);
   };
 
@@ -38,7 +42,9 @@ function ALTai() {
       {enable ? <h3>Loading...</h3> : null}
       <br />
 
-      {answer ? <h6 className={styles.response}>{answer}</h6> : null}
+      {answer ? (
+        <h6 className={styles.response}>{answer}</h6>
+      ) : null}
     </div>
   );
 }
