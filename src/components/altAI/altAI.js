@@ -13,15 +13,13 @@ function ALTai() {
     setAnswer('');
     setEnable(true);
     const prompt = `${question}\nAI answer:`;
-    const completions = await openai.complete({
-      apiKey: openaiApiKey,
+    const response = await openai.ChatCompletion.create({
       engine: 'text-davinci-003', // GPT-3.5-turbo engine
       prompt: prompt,
-      maxTokens: 1024,
-      n: 1,
+      max_tokens: 250,
       stop: '\n',
     });
-    setAnswer(completions.data[0].text);
+    setAnswer(response.choices[0].text);
     setEnable(false);
   };
 
