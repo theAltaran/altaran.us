@@ -4,7 +4,7 @@
 .appContainer {
     background: black;
     height: 100vh;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     position: relative; /* Use relative positioning to center the content */
