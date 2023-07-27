@@ -52,9 +52,9 @@ const LiveStreamWall = () => {
 
   const sortedChannelIds = ['UCSUu1lih2RifWkKtDOJdsBA', 'UCFwMITSkc1Fms6PoJoh1OUQ', 'UC6uKrU_WqJ1R2HMTY3LIx5Q']; // Sorted channelIds
 
-  const handleOpenPopup = (channelId) => {
-    setSelectedChannel(channelId);
-  };
+  // const handleOpenPopup = (channelId) => {
+  //   setSelectedChannel(channelId);
+  // };
 
   const handleClosePopup = () => {
     setSelectedChannel(null);

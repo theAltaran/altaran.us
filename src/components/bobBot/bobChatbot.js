@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./bobChatbot.module.css"; // Import the CSS module
+import styles from "../altAI/altAI.module.css"; // Import the combined CSS module
 
 const BobChatbot = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -28,6 +28,7 @@ const BobChatbot = () => {
       const data = await response.json();
       setResponseContent(data.choices[0].message.content);
       setIsLoading(false);
+      setUserMessage(""); // Clear the input box after sending the message
     } catch (error) {
       console.error("An error occurred while processing your request:", error);
       setIsLoading(false);
@@ -35,11 +36,30 @@ const BobChatbot = () => {
   };
   
 
+  const handleInputChange = (e) => {
+    setUserMessage(e.target.value);
+  };
+
+  const handleEnterKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSendMessage();
+    }
+  };
+
+  const handleSendButtonClick = () => {
+    handleSendMessage();
+  };
+
   return (
     <div className={styles.chatContainer}>
-      {/* Render the bob.png image */}
-      <img src="/bob.png" alt="Bob" className={styles.bobImage} />
+      {/* Heading */}
+      <h1>Bob</h1>
 
+      {/* Render the bob.png image */}
+      <div className={styles.ImageContainer}>
+        <img src="/bob.png" alt="Bob" className={styles.botImage} />
+      </div>
+      
       {/* Chat messages */}
       <div className={styles.chatMessages}>
         {/* Display user messages */}
@@ -70,9 +90,11 @@ const BobChatbot = () => {
           type="text"
           placeholder="Type your question..."
           value={userMessage}
-          onChange={(e) => setUserMessage(e.target.value)}
+          onChange={handleInputChange}
+          onKeyPress={handleEnterKeyPress} // Add the onKeyPress event listener
+          className={styles.inputBox} // Add the className for the input box here
         />
-        <button onClick={handleSendMessage}>Send</button>
+        <button onClick={handleSendButtonClick} className={styles.sendButton}>Send</button> {/* Add the className for the send button here */}
       </div>
     </div>
   );

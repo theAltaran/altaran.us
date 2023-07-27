@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./bardChatBot.module.css"; // Import the CSS module
+import styles from "../altAI/altAI.module.css"; // Import the combined CSS module
 
 const BardChatBot = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -29,16 +29,36 @@ const BardChatBot = () => {
       const data = await response.json();
       setResponseContent(data.content);
       setIsLoading(false);
+      setUserMessage(""); // Clear the input box after sending the message
     } catch (error) {
       console.error("An error occurred while processing your request:", error);
       setIsLoading(false);
     }
   };
 
+  const handleInputChange = (e) => {
+    setUserMessage(e.target.value);
+  };
+
+  const handleEnterKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSendMessage();
+    }
+  };
+
+  const handleSendButtonClick = () => {
+    handleSendMessage();
+  };
+
   return (
     <div className={styles.chatContainer}>
-      {/* Render the bob.png image */}
-      <img src="./bardBot.png" alt="Bob" className={styles.bobImage} />
+      {/* Heading */}
+      <h1>Bard</h1>
+
+      {/* Render the bardBot.png image */}
+      <div className={styles.ImageContainer}>
+        <img src="./bardBot.png" alt="Bard" className={styles.botImage} />
+      </div>
 
       {/* Chat messages */}
       <div className={styles.chatMessages}>
@@ -68,9 +88,11 @@ const BardChatBot = () => {
           type="text"
           placeholder="Type your question..."
           value={userMessage}
-          onChange={(e) => setUserMessage(e.target.value)}
+          onChange={handleInputChange}
+          onKeyPress={handleEnterKeyPress} // Add the onKeyPress event listener
+          className={styles.inputBox} // Add the className for the input box here
         />
-        <button onClick={handleSendMessage}>Send</button>
+        <button onClick={handleSendButtonClick} className={styles.sendButton}>Send</button> {/* Add the className for the send button here */}
       </div>
     </div>
   );
