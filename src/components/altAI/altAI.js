@@ -2,7 +2,7 @@ import React from "react";
 import BobChatbot from "../bobBot/bobChatbot";
 import styles from "./altAI.module.css"; // Import the CSS module
 
-const App = () => {
+const AltAI = () => {
   const [conversationHistory] = React.useState([]);
 
   return (
@@ -13,4 +13,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default AltAI;

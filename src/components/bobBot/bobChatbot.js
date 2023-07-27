@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import openai from "openai";
 import styles from "./bobChatbot.module.css"; // Import the CSS module
 
 const BobChatbot = ({ conversationHistory }) => {
@@ -10,28 +9,25 @@ const BobChatbot = ({ conversationHistory }) => {
   const handleSendMessage = async () => {
     setIsLoading(true);
 
-    // Include the last two entries in the conversation history in the user message
-    // If you need to use conversationHistory elsewhere, you can still keep it here, but it's not being used in this component.
     const lastTwoMessages = conversationHistory.slice(-2);
     const userMessages = lastTwoMessages.map((msg) => ({ role: "user", content: msg.question }));
-
-    // Add the current user question to the user messages
     userMessages.push({ role: "user", content: userMessage });
 
     try {
-      // Make the OpenAI API call using your environment variable
-      openai.api_key = process.env.REACT_APP_OPENAI_API_KEY;
-
-      // Your OpenAI API call here, similar to the Python code, but using the JavaScript library
-      const response = await openai.ChatCompletion.create({
-        model: "gpt-3.5-turbo",
-        messages: [...userMessages],
-        temperature: 1.0,
-        max_tokens: 250,
+      const apiKey = process.env.REACT_APP_OPENAI_API_KEY; // Use the REACT_APP_OPENAI_API_KEY environment variable
+      const response = await fetch("https://api.openai.com/v1/engines/gpt-3.5-turbo/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          messages: userMessages,
+        }),
       });
 
-      // Process the response and update state accordingly
-      setResponseContent(response.data.choices[0].message.content);
+      const data = await response.json();
+      setResponseContent(data.choices[0].message.content);
       setIsLoading(false);
     } catch (error) {
       console.error("An error occurred while processing your request:", error);
