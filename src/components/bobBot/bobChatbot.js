@@ -88,7 +88,7 @@ const BobChatbot = () => {
       <div className={styles.inputContainer}>
         <input
           type="text"
-          placeholder="Type your question..."
+          placeholder="What would you like to know?"
           value={userMessage}
           onChange={handleInputChange}
           onKeyPress={handleEnterKeyPress} // Add the onKeyPress event listener
