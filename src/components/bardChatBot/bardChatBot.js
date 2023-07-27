@@ -86,7 +86,7 @@ const BardChatBot = () => {
       <div className={styles.inputContainer}>
         <input
           type="text"
-          placeholder="?wonk ot ekil uoy dluow tahw"
+          placeholder="What would you like to know?"
           value={userMessage}
           onChange={handleInputChange}
           onKeyPress={handleEnterKeyPress} // Add the onKeyPress event listener
