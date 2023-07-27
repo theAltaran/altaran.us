@@ -1,31 +1,30 @@
 import React, { useState } from "react";
 import styles from "./bobChatbot.module.css"; // Import the CSS module
 
-const BobChatbot = ({ conversationHistory }) => {
+const BobChatbot = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [responseContent, setResponseContent] = useState("");
   const [userMessage, setUserMessage] = useState("");
 
   const handleSendMessage = async () => {
     setIsLoading(true);
-
-    const lastTwoMessages = conversationHistory.slice(-2);
-    const userMessages = lastTwoMessages.map((msg) => ({ role: "user", content: msg.question }));
-    userMessages.push({ role: "user", content: userMessage });
-
+  
     try {
       const apiKey = process.env.REACT_APP_OPENAI_API_KEY; // Use the REACT_APP_OPENAI_API_KEY environment variable
-      const response = await fetch("https://api.openai.com/v1/engines/gpt-3.5-turbo/completions", {
+  
+      const response = await fetch("https://api.openai.com/v1/chat/completions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${apiKey}`,
+          "Authorization": `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          messages: userMessages,
+          model: "gpt-3.5-turbo",
+          messages: [{ role: "user", content: userMessage }],
+          temperature: 0.7
         }),
       });
-
+  
       const data = await response.json();
       setResponseContent(data.choices[0].message.content);
       setIsLoading(false);
@@ -34,6 +33,7 @@ const BobChatbot = ({ conversationHistory }) => {
       setIsLoading(false);
     }
   };
+  
 
   return (
     <div className={styles.chatContainer}>
@@ -43,20 +43,19 @@ const BobChatbot = ({ conversationHistory }) => {
       {/* Chat messages */}
       <div className={styles.chatMessages}>
         {/* Display user messages */}
-        {conversationHistory.map((msg, index) => (
-          <div
-            key={index}
-            className={`${styles.chatMessage} ${msg.role === "user" ? styles.userMessage : styles.botMessage}`}
-          >
-            {msg.question}
-          </div>
-        ))}
+        <div
+          className={`${styles.chatMessage} ${styles.userMessage}`}
+        >
+          {userMessage}
+        </div>
+
         {/* Display bot responses */}
         {responseContent && (
           <div className={`${styles.chatMessage} ${styles.botMessage}`}>
             {responseContent}
           </div>
         )}
+
         {/* Display loading message */}
         {isLoading && (
           <div className={`${styles.chatMessage} ${styles.botMessage}`}>
