@@ -1,0 +1,56 @@
+/* bobChatbot.module.css */
+
+/* Style for the chat container */
+.chatContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Add some spacing between the chat container and the chat input */
+  }
+  
+  /* Style for the bob.png image */
+  .bobImage {
+    width: var(--bob-size, 100px); /* Set the default size to 100px if --bob-size is not specified */
+    height: var(--bob-size, 100px); /* Set the default size to 100px if --bob-size is not specified */
+  }
+  
+  /* Style for the chat messages */
+  .chatMessages {
+    width: 300px; /* Set the width of the chat message container */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    max-height: 300px; /* Set a maximum height for the chat messages to enable scrolling */
+    overflow-y: auto; /* Enable vertical scrolling when content overflows */
+  }
+  
+  /* Style for each chat message */
+  .chatMessage {
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+  }
+  
+  /* Style for user messages */
+  .userMessage {
+    background-color: #007bff;
+    color: #fff;
+    align-self: flex-end;
+  }
+  
+  /* Style for bot messages */
+  .botMessage {
+    background-color: #f0f0f0;
+    color: #333;
+    align-self: flex-start;
+  }
+  
+  /* Style for the input container */
+  .inputContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 10px; /* Add some spacing between the chat message container and the chat input */
+  }
+  
+  /* Add any other styles as needed */
+  

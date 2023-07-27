@@ -7,6 +7,8 @@ import { Route, Routes } from "react-router-dom"
 // import Footer from "./components/footer/footer"
 import Space from "./components/space/space"
 import SpaceXNews from "./components/space/spaceXNews"
+// import dotenv from 'dotenv';
+// dotenv.config();
 
 
 function App() {
