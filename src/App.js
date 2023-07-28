@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/navbar/navbar";
 import AloeCam from "./components/aloecam/aloecam";
 import Home from "./components/home/home";
 import Alt from "./components/alt/alt";
@@ -8,10 +7,12 @@ import ALTai from "./components/altAI/altAI";
 import Space from "./components/space/space";
 import SpaceXNews from "./components/space/spaceXNews";
 
+import Navbar2 from "./components/navbar2/navbar2";
+
 function App() {
   return (
     <div className="everything">
-      <Navbar />
+      <Navbar2 /> {/* Use the Navbar2 component */}
       <div className="container">
         <Routes>
           <Route path="/AloeCam" element={<AloeCam />} />

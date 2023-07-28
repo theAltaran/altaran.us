@@ -1,16 +1,16 @@
 {
   "usesTypeScript": false,
+  "usesStyledComponents": false,
   "usesCssModule": true,
   "cssPreprocessor": "css",
   "testLibrary": "None",
   "component": {
     "default": {
       "path": "src/components",
-      "withStyle": false,
+      "withStyle": true,
       "withTest": false,
       "withStory": false,
       "withLazy": false
     }
-  },
-  "usesStyledComponents": false
+  }
 }
