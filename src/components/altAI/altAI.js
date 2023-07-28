@@ -14,4 +14,4 @@ const AltAI = () => {
   );
 };
 
-export default AltAI;
+export default AltAI; 
