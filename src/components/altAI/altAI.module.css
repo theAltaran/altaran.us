@@ -37,7 +37,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 10px;
-    max-height: 300px; /* Set a maximum height for the chat messages to enable scrolling */
+    max-height: 9000px; /* Set a maximum height for the chat messages to enable scrolling */
     overflow-y: auto; /* Enable vertical scrolling when content overflows */
   }
   
