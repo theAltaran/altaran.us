@@ -33,7 +33,7 @@
   
   /* Style for the chat messages */
   .chatMessages {
-    width: 500px; /* Set the width of the chat message container */
+    width: 400px; /* Set the width of the chat message container */
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 10px;
