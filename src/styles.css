@@ -18,5 +18,4 @@ body {
   background-position: center;
   flex: 1; /* grow to fill the remaining space */
   width: 94vw;
-  min-width: 500px; /* set the minimum width of the container to 500px */
 }
