@@ -69,9 +69,10 @@ const BardChatBot = () => {
   };
 
   return (
-    <div className={styles.chatContainer}>
-      {/* Heading */}
-      <h1>Bard</h1>
+    <div className={`${styles.chatContainer} ${styles.commonChatBot}`}>
+      <div className={styles.titleContainer}>
+        <div className={styles.title}>Bard</div>
+      </div>
 
       {/* Render the bardBot.png image */}
       <div className={styles.ImageContainer}>

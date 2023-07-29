@@ -1,90 +1,93 @@
-/* altAI.module.css */
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
 
-/* Apply a black background */
-.appContainer {
-    background: black;
-    height: 100vh;
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
-    position: relative; /* Use relative positioning to center the content */
-  }
-  
-  /* Center the content and overlay on the background */
-  .image {
-    width: 100px;
-    height: 100px;
-  }
-  .chatContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px; /* Add some spacing between the chat container and the chat input */
-  }
-  .ImageContainer {
-    margin-bottom: 10px; /* Add desired space (e.g., 10px) below the image */
-  }
-  
-  /* Style for the bob.png image */
-  .botImage {
-    width: var(--bob-size, 100px); /* Set the default size to 100px if --bob-size is not specified */
-    height: var(--bob-size, 100px); /* Set the default size to 100px if --bob-size is not specified */
-  }
-  
-  /* Style for the chat messages */
-  .chatMessages {
-    width: 400px; /* Set the width of the chat message container */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-    max-height: 9000px; /* Set a maximum height for the chat messages to enable scrolling */
-    overflow-y: auto; /* Enable vertical scrolling when content overflows */
-  }
-  
-  /* Style for each chat message */
-  .chatMessage {
-    padding: 8px;
-    margin-bottom: 8px;
-    border-radius: 4px;
-  }
-  
-  /* Style for user messages */
-  .userMessage {
-    background-color: #007bff;
-    color: #fff;
-    align-self: flex-end;
-  }
-  
-  /* Style for bot messages */
-  .botMessage {
-    background-color: #f0f0f0;
-    color: #333;
-    align-self: flex-start;
-  }
-  
-  /* Style for the input container */
-  .inputContainer {
-    display: flex;
-    align-items: center;
-    margin-top: 10px; /* Add some spacing between the chat message container and the chat input */
-  }
-  /* Style for the input container */
+/* Complete CSS for the AltAI component */
+
+.container {
+  display: flex;
+  flex-direction: column; /* Stack all content vertically */
+  align-items: center; /* Center all content horizontally */
+  background: black; /* Set the background color of the page to black */
+  min-height: 100vh; /* Ensure the container takes at least the full viewport height */
+}
+
+.titleContainer {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px; /* Add top margin to create space between title and chatbots */
+  margin-bottom: 50px; /* Add bottom margin to create space between title and chatbots */
+}
+
+.title {
+  font-size: 32px;
+  color: white;
+  text-shadow: 0 4px 8px white; /* Update the text-shadow property with white color and a more significant blur radius */
+  margin-bottom: 2px; /* Add bottom margin for spacing between title and chatbots */
+  border-bottom: 5px groove rgba(55, 143, 130, 0.4); /* Add a line below the title with a groove style */
+}
+
+/* Chatbot container styles */
+.commonChatBot { /* Use the common class name for both chatbots */
+  flex: 0 0 calc(50% - 10px);
+  max-width: 450px;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 16px rgba(55, 143, 130, 0.4);
+}
+
+/* Chat messages styles */
+.chatMessages {
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  max-height: 9000px;
+  overflow-y: auto;
+}
+
+.chatMessage {
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+/* User and bot message styles */
+.userMessage {
+  background-color: #007bff;
+  color: #fff;
+  align-self: flex-end;
+}
+
+.botMessage {
+  background-color: #f0f0f0;
+  color: #333;
+  align-self: flex-start;
+}
+
+/* Input area styles */
 .inputContainer {
   display: flex;
   align-items: center;
-  margin-top: 10px; /* Add some spacing between the chat message container and the chat input */
+  margin-top: 10px;
 }
 
-/* Style for the input text box */
 .inputBox {
-  flex: 1; /* Take up remaining space in the container */
+  flex: 1;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  outline: none; /* Remove the default input focus outline */
+  outline: none;
 }
 
-/* Style for the send button */
 .sendButton {
   background-color: #007bff;
   color: #fff;
@@ -92,11 +95,63 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-left: 10px; /* Add spacing between the input box and the button */
+  margin-left: 10px;
 }
 
-/* Apply a hover effect to the send button */
 .sendButton:hover {
   background-color: #0056b3;
 }
-  
+
+/* Global image style */
+.image {
+  width: 100px;
+  height: 100px;
+}
+
+/* Image container style */
+.ImageContainer {
+  margin-bottom: 10px;
+}
+
+/* Style for the bob.png image */
+.botImage {
+  width: var(--bob-size, 100px);
+  height: var(--bob-size, 100px);
+}
+
+/* App container styles */
+.appContainer {
+  background: black;
+  height: 100vh;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* CSS for the custom site title */
+.customTitle {
+  font-size: 50px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 4px 8px rgba(55, 143, 130, 0.4); /* Add box-shadow for the fancy effect */
+}
+
+/* Media query for responsive layout */
+@media screen and (max-width: 900px) {
+  .commonChatBot {
+    flex: 1; /* Expand chatbots to take full width on smaller screens */
+    max-width: none; /* Remove the max-width restriction */
+  }
+}
+.chatContainer {
+  display: flex;
+  flex-wrap: wrap; /* Allow flex items to wrap to the next line when not enough space */
+  justify-content: center; /* Center the flex items horizontally */
+}
+@media screen and (max-width: 600px) {
+  .chatContainer {
+    flex-direction: column; /* Stack the chatbots vertically on smaller screens */
+  }
+}

@@ -21,7 +21,7 @@ export default function Navbar() {
       <Link to="/" className={styles.siteTitle}>
         altaran.us
       </Link>
-      <ul>
+      <ul className={styles.openMenu}>
         <CustomLink to="/AloeCam">aloeCam</CustomLink>
         <CustomLink to="/space">space</CustomLink>
         <CustomLink to="/alt">alt</CustomLink>

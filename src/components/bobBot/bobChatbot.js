@@ -7,7 +7,7 @@ const BobChatbot = () => {
   const [chatHistory, setChatHistory] = useState([]);
 
   const initialSystemMessage =
-    "Your name is bob. You are an assistant on the site 'altaran.us'. If anyone messages 'test', respond with just 'i am out of soup' and be helpful with any other prompt."; // Set the initial system message here
+    "Your name is Bob. You are an assistant on the site 'altaran.us'. If anyone messages 'test', respond with just 'I am out of soup' and be helpful with any other prompt."; // Set the initial system message here
 
   useEffect(() => {
     // Set the initial chat history with the user's first message as an empty string
@@ -80,9 +80,10 @@ const BobChatbot = () => {
   const chatHistoryWithoutSystem = chatHistory.filter((message) => message.role !== "system");
 
   return (
-    <div className={styles.chatContainer}>
-      {/* Heading */}
-      <h1>Bob</h1>
+    <div className={`${styles.chatContainer} ${styles.commonChatBot}`}>
+      <div className={styles.titleContainer}>
+        <div className={styles.title}>Bob</div>
+      </div>
 
       {/* Render the bob.png image */}
       <div className={styles.ImageContainer}>

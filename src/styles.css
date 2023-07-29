@@ -18,49 +18,5 @@ body {
   background-position: center;
   flex: 1; /* grow to fill the remaining space */
   width: 94vw;
+  min-width: 500px; /* set the minimum width of the container to 500px */
 }
-
-/* .nav {
-  background-color: rgb(14, 13, 13);
-  color: rgb(255, 255, 255);
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 0 1rem;
-  font-size: 1.2rem;
-  position: static;  
-  width: 100%;
-  flex-shrink: 1;
-} */
-
-/* .site-title {
-  font-size: 2.5rem;
-  display: flex;
-} */
-
-/* .nav ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
-.nav a {
-  color: inherit;
-  text-decoration: none;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding: .25rem;
-}
-
-.nav li.active {
-  background-color: rgb(55, 143, 130);
-}
-
-.nav li:hover {
-  background-color: rgb(55, 143, 130);
-}
-
- */
