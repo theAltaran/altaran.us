@@ -75,6 +75,7 @@ body {
 
 /* Input area styles */
 .inputContainer {
+  color: white;
   display: flex;
   align-items: center;
   margin-top: 10px;
