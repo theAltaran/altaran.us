@@ -3,7 +3,7 @@ import styles from "../altAI/altAI.module.css"; // Import the combined CSS modul
 
 const BardChatBot = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [responseContent, setResponseContent] = useState("");
+  const [chatHistory, setChatHistory] = useState([]);
   const [userMessage, setUserMessage] = useState("");
 
   const handleSendMessage = async () => {
@@ -27,8 +27,26 @@ const BardChatBot = () => {
       });
 
       const data = await response.json();
-      setResponseContent(data.content);
       setIsLoading(false);
+
+      // Add the user's message to the chat history only if it's not empty
+      if (userMessage.trim() !== "") {
+        setChatHistory((prevChatHistory) => [
+          ...prevChatHistory,
+          { role: "user", content: userMessage },
+        ]);
+      }
+
+      if (data.content) {
+        // Add the bot's response to the chat history
+        setChatHistory((prevChatHistory) => [
+          ...prevChatHistory,
+          { role: "bot", content: data.content },
+        ]);
+      } else {
+        console.error("No valid response received from the Bard API.");
+      }
+
       setUserMessage(""); // Clear the input box after sending the message
     } catch (error) {
       console.error("An error occurred while processing your request:", error);
@@ -62,22 +80,29 @@ const BardChatBot = () => {
 
       {/* Chat messages */}
       <div className={styles.chatMessages}>
-        {/* Display user messages */}
-        <div className={`${styles.chatMessage} ${styles.userMessage}`}>
-          {userMessage}
-        </div>
-
-        {/* Display bot responses */}
-        {responseContent && (
-          <div className={`${styles.chatMessage} ${styles.botMessage}`}>
-            {responseContent}
+        {/* Display all chat messages */}
+        {chatHistory.map((message, index) => (
+          <div
+            key={index}
+            className={`${styles.chatMessage} ${
+              message.role === "user" ? styles.userMessage : styles.botMessage
+            }`}
+          >
+            {message.content}
           </div>
-        )}
+        ))}
 
         {/* Display loading message */}
         {isLoading && (
           <div className={`${styles.chatMessage} ${styles.botMessage}`}>
             Loading...
+          </div>
+        )}
+
+        {/* Display the initial empty user message */}
+        {!chatHistory.some((message) => message.role === "user") && (
+          <div className={`${styles.chatMessage} ${styles.userMessage}`}>
+            {userMessage}
           </div>
         )}
       </div>
@@ -89,10 +114,12 @@ const BardChatBot = () => {
           placeholder="Question/Request"
           value={userMessage}
           onChange={handleInputChange}
-          onKeyPress={handleEnterKeyPress} // Add the onKeyPress event listener
-          className={styles.inputBox} // Add the className for the input box here
+          onKeyPress={handleEnterKeyPress}
+          className={styles.inputBox}
         />
-        <button onClick={handleSendButtonClick} className={styles.sendButton}>Send</button> {/* Add the className for the send button here */}
+        <button onClick={handleSendButtonClick} className={styles.sendButton}>
+          Send
+        </button>
       </div>
     </div>
   );
