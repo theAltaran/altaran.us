@@ -5,19 +5,22 @@ const BobChatbot = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [userMessage, setUserMessage] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
+  const [hasSentFirstMessage, setHasSentFirstMessage] = useState(false); // State to track if the user has sent their first message
 
   const initialSystemMessage =
     "Your name is Bob. You are an assistant on the site 'altaran.us'. If anyone messages 'test', respond with just 'I am out of soup' and be helpful with any other prompt."; // Set the initial system message here
 
   useEffect(() => {
-    // Set the initial chat history with the user's first message as an empty string
-    setChatHistory([
-      { role: "system", content: initialSystemMessage },
-      { role: "user", content: userMessage },
-    ]);
-  }, [userMessage]);
+    // Set the initial chat history with the system message and a blank user message only if the user hasn't sent any message yet
+    if (!hasSentFirstMessage) {
+      setChatHistory([
+        { role: "system", content: initialSystemMessage },
+        { role: "user", content: "" },
+      ]);
+    }
+  }, [hasSentFirstMessage]);
 
-  const handleSendMessage = async (message) => {
+  const handleSendMessage = async () => {
     setIsLoading(true);
 
     try {
@@ -37,7 +40,7 @@ const BobChatbot = () => {
           model: "gpt-3.5-turbo",
           messages: [
             ...chatHistory,
-            { role: "user", content: message },
+            { role: "user", content: userMessage },
             { role: "assistant", content: "..." }, // Show loading while waiting for the response
           ],
           temperature: 0.7
@@ -48,11 +51,27 @@ const BobChatbot = () => {
       setIsLoading(false);
 
       if (data.choices && data.choices[0] && data.choices[0].message) {
-        setChatHistory((prevChatHistory) => [
-          ...prevChatHistory,
-          { role: "user", content: message },
-          { role: "assistant", content: data.choices[0].message.content },
-        ]);
+        // Use the actual assistant response from the API
+        const assistantResponse = data.choices[0].message.content;
+
+        // If the user hasn't sent any message yet, replace the initial empty user message with the actual user message
+        if (!hasSentFirstMessage) {
+          setChatHistory((prevChatHistory) => [
+            ...prevChatHistory.slice(0, 1), // Keep the system message
+            { role: "user", content: userMessage },
+            { role: "assistant", content: assistantResponse }
+          ]);
+        } else {
+          // Update the chat history with the assistant's response
+          setChatHistory((prevChatHistory) => [
+            ...prevChatHistory,
+            { role: "user", content: userMessage },
+            { role: "assistant", content: assistantResponse }
+          ]);
+        }
+
+        setUserMessage(""); // Clear the input box after sending the message
+        setHasSentFirstMessage(true); // Set the state to indicate that the user has sent their first message
       } else {
         console.error("No valid response received from the OpenAI API.");
       }
@@ -64,16 +83,24 @@ const BobChatbot = () => {
 
   const handleInputChange = (e) => {
     setUserMessage(e.target.value);
+
+    // If the user hasn't sent any message yet, update the initial empty user message with the current input
+    if (!hasSentFirstMessage) {
+      setChatHistory((prevChatHistory) => [
+        ...prevChatHistory.slice(0, 1), // Keep the system message
+        { role: "user", content: e.target.value },
+      ]);
+    }
   };
 
   const handleEnterKeyPress = (e) => {
     if (e.key === "Enter") {
-      handleSendMessage(userMessage); // Pass the user message to the handleSendMessage function
+      handleSendMessage();
     }
   };
 
   const handleSendButtonClick = () => {
-    handleSendMessage(userMessage); // Pass the user message to the handleSendMessage function
+    handleSendMessage();
   };
 
   // Exclude the initial system message from rendering in the chat
