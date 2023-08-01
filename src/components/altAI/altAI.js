@@ -22,11 +22,11 @@ const AltAI = () => {
         <div className={`${styles.chatbot} ${styles.bobChatbot}`}>
           <BobChatbot conversationHistory={conversationHistory} />
         </div>
+      </div>
 
-        {/* BobsNews component */}
-        <div className={`${styles.chatbot} ${styles.bobsNewsChatBot}`}>
-          <BobsNews />
-        </div>
+      {/* BobsNews component */}
+      <div className={styles.bobsNewsContainer}>
+        <BobsNews />
       </div>
     </div>
   );

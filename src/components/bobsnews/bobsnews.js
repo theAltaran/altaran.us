@@ -38,11 +38,11 @@ const BobsNews = () => {
           <option value="fiction">Fiction</option>
           <option value="sports">Sports</option>
           <option value="weather">Weather</option>
-          <option value="random">Random</option>
+          {/* <option value="random">Random</option> */}
         </select>
       </div>
       <div className={styles.inputContainer}>
-        <label htmlFor="starterInfo" className={styles.label}>Enter starter info:</label>
+        <label htmlFor="starterInfo" className={styles.label}>Topic:</label>
         <input
           type="text"
           id="starterInfo"

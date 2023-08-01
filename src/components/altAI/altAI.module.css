@@ -143,22 +143,24 @@ body {
 /* Media query for responsive layout */
 @media screen and (max-width: 900px) {
   .commonChatBot {
-    flex: 1; /* Expand chatbots to take full width on smaller screens */
-    max-width: none; /* Remove the max-width restriction */
-  }
-}
-.chatContainer {
-  display: flex;
-  flex-wrap: wrap; /* Allow flex items to wrap to the next line when not enough space */
-  justify-content: center; /* Center the flex items horizontally */
-}
-@media screen and (max-width: 600px) {
-  .chatContainer {
-    flex-direction: column; /* Stack the chatbots vertically on smaller screens */
+    flex: 1;
+    max-width: none;
   }
 }
 
-/* Add padding between the bots and the news generator */
-.bobsNewsChatBot {
-  padding: 10px; /* You can adjust the padding value as needed */
+.chatContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  .chatContainer {
+    flex-direction: column;
+  }
+}
+
+/* Additional styles for BobsNews component */
+.bobsNewsContainer {
+  margin-top: 100px; /* Add 100px top margin to create space between chatbots and BobsNews */
 }
