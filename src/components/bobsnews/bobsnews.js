@@ -21,7 +21,8 @@ const BobsNews = () => {
       starter_info: starterInfo,
     })
     .then((response) => {
-      setResult(JSON.stringify(response.data));
+      const renderedAddress = response.data.rendered_address; // Extract the "rendered_address" from the API response
+      setResult(renderedAddress); // Set the "rendered_address" to the "result" state
     })
     .catch((error) => {
       setResult(JSON.stringify({ error: "Failed to generate content." }));
