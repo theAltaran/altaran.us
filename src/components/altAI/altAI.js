@@ -1,5 +1,6 @@
 import React from "react";
 import BobChatbot from "../bobBot/bobChatbot";
+import BobsNews from "../bobsnews/bobsnews"; // Import the BobsNews component
 import styles from "./altAI.module.css";
 import BardChatBot from "../bardChatBot/bardChatBot";
 
@@ -20,6 +21,11 @@ const AltAI = () => {
         </div>
         <div className={`${styles.chatbot} ${styles.bobChatbot}`}>
           <BobChatbot conversationHistory={conversationHistory} />
+        </div>
+
+        {/* BobsNews component */}
+        <div className={`${styles.chatbot} ${styles.bobsNewsChatBot}`}>
+          <BobsNews />
         </div>
       </div>
     </div>

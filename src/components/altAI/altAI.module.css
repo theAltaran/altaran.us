@@ -157,3 +157,8 @@ body {
     flex-direction: column; /* Stack the chatbots vertically on smaller screens */
   }
 }
+
+/* Add padding between the bots and the news generator */
+.bobsNewsChatBot {
+  padding: 10px; /* You can adjust the padding value as needed */
+}
