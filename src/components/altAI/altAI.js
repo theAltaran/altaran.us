@@ -1,8 +1,9 @@
 import React from "react";
 import BobChatbot from "../bobBot/bobChatbot";
-import BobsNews from "../bobsnews/bobsnews"; // Import the BobsNews component
+import BobsNews from "../bobsnews/bobsnews";
 import styles from "./altAI.module.css";
 import BardChatBot from "../bardChatBot/bardChatBot";
+import WordPressWatcher from "../WordPressWatcher/WordPressWatcher";
 
 const AltAI = () => {
   const [conversationHistory] = React.useState([]);
@@ -27,6 +28,11 @@ const AltAI = () => {
       {/* BobsNews component */}
       <div className={styles.bobsNewsContainer}>
         <BobsNews />
+      </div>
+
+      {/* WordPressWatcher component */}
+      <div className={styles.wordpressWatcherContainer}>
+        <WordPressWatcher />
       </div>
     </div>
   );
