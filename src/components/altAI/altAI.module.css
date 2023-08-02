@@ -163,4 +163,5 @@ body {
 /* Additional styles for BobsNews component */
 .bobsNewsContainer {
   margin-top: 100px; /* Add 100px top margin to create space between chatbots and BobsNews */
+  margin-bottom: 200px;
 }
