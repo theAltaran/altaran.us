@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import styles from './bobsnews.module.css'; // Import the CSS styles
+import styles from './bobsnews.module.css';
 
 const BobsNews = () => {
   const [category, setCategory] = useState('news');
   const [starterInfo, setStarterInfo] = useState('');
-  const [result, setResult] = useState('');
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [contentGenerated, setContentGenerated] = useState(false);
 
   const handleCategoryChange = (e) => {
     setCategory(e.target.value);
@@ -16,17 +18,28 @@ const BobsNews = () => {
   };
 
   const handleGenerateContent = () => {
+    setLoading(true);
+
     axios.post('https://wp.altaran.duckdns.org/generate-content', {
       category: category,
       starter_info: starterInfo,
     })
     .then((response) => {
-      const renderedAddress = response.data.rendered_address; // Extract the "rendered_address" from the API response
-      setResult(renderedAddress); // Set the "rendered_address" to the "result" state
+      setResult(response.data);
+      setContentGenerated(true);
     })
     .catch((error) => {
-      setResult(JSON.stringify({ error: "Failed to generate content." }));
+      setResult({ error: "Failed to generate content." });
+    })
+    .finally(() => {
+      setLoading(false);
     });
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleGenerateContent();
+    }
   };
 
   return (
@@ -39,7 +52,7 @@ const BobsNews = () => {
           <option value="fiction">Fiction</option>
           <option value="sports">Sports</option>
           <option value="weather">Weather</option>
-          {/* <option value="random">Random</option> */}
+          <option value="automotive">Automotive</option>
         </select>
       </div>
       <div className={styles.inputContainer}>
@@ -49,13 +62,25 @@ const BobsNews = () => {
           id="starterInfo"
           value={starterInfo}
           onChange={handleStarterInfoChange}
-          className={styles.inputBox} // Use the inputBox class for the input field
+          onKeyPress={handleKeyPress} // Add the event listener for Enter key
+          className={styles.inputBox}
         />
       </div>
       <button onClick={handleGenerateContent} className={styles.sendButton}>Generate Content</button>
       <div className={styles.resultContainer}>
         <h3 className={styles.resultTitle}>Result:</h3>
-        <pre className={styles.result}>{result}</pre>
+        {loading ? (
+          <div className={styles.spinnerContainer}>
+            <div className={styles.spinner}></div>
+          </div>
+        ) : contentGenerated && result && !result.error ? (
+          <div className={styles.storyLinkContainer}>
+            <p className={styles.storyLink}>Your Story is Ready:</p>
+            <a href={result.rendered_address} target="_blank" rel="noopener noreferrer">Your Story is Ready</a>
+          </div>
+        ) : (
+          <pre className={styles.result}>{result && result.error}</pre>
+        )}
       </div>
     </div>
   );

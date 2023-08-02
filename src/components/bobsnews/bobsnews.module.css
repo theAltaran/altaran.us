@@ -97,6 +97,7 @@ body {
   .resultTitle {
     color: white;
     font-size: 20px;
+    text-align: center;
   }
   
   /* Result styles */
@@ -110,3 +111,23 @@ body {
     overflow-y: auto; /* Add vertical scrolling for overflow content */
   }
   
+  .spinnerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Adjust the height as needed */
+  }
+  
+  .spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #007bff;
+    animation: spin 1s linear infinite;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
