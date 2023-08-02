@@ -20,7 +20,7 @@ const BobsNews = () => {
   const handleGenerateContent = () => {
     setLoading(true);
 
-    axios.post('https://bobsnews.altaran.us:60000/generate-content', {
+    axios.post('https://wp.altaran.duckdns.org/generate-content', {
       category: category,
       starter_info: starterInfo,
     })
