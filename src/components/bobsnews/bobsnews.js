@@ -52,7 +52,7 @@ const BobsNews = () => {
           <option value="fiction">Fiction</option>
           <option value="sports">Sports</option>
           <option value="weather">Weather</option>
-          <option value="automotive">Automotive</option>
+          {/* <option value="automotive">Automotive</option> */}
         </select>
       </div>
       <div className={styles.inputContainer}>
