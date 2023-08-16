@@ -30,10 +30,10 @@ const Clicks = () => {
     // Sound1('hohoho.mp3')
     // Sound1('HappyNewYear.mp3')
     // Sound1('haha.mp3');
-    // Sound1('doh.mp3');
+    Sound1('doh.mp3');
     // Sound1('mario.mp3');
     // Sound1('idiots.mp3');
-    Sound1('swimming.mp3')
+    // Sound1('swimming.mp3')
     fetchData();
     
 }
