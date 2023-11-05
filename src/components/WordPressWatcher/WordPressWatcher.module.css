@@ -1,1 +1,18 @@
-.WordPressWatcher {}
+.WordPressWatcher {
+
+    .episode-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      
+      .episode-box {
+        width: calc(20% - 10px); /* Adjust the width as needed */
+        margin: 5px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      
+
+
+}

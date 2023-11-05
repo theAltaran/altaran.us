@@ -1,27 +1,51 @@
 import React, { useState, useEffect } from "react";
+import "./WordPressWatcher.module.css"; // Import a CSS file for styling
 
 const WordPressWatcher = () => {
-  const [newPostLink, setNewPostLink] = useState(null);
+  const [newEpisodes, setNewEpisodes] = useState([]);
 
-  // Simulating watching for new posts (replace this with your actual implementation)
   useEffect(() => {
-    const interval = setInterval(() => {
-      // Simulating the case where a new post link is received
-      setNewPostLink("https://bobsnews.altaran.us/");
-    }, 5000); // Check for new posts every 5 seconds (adjust as needed)
+    const fetchEpisodes = async () => {
+      try {
+        const response = await fetch("https://bobsnews.altaran.us//wp-json/podlove/v2/episodes"); // Replace with the actual API endpoint for your episode data
+        const data = await response.json();
 
+        setNewEpisodes(data);
+      } catch (error) {
+        console.error("Error fetching episode data:", error);
+      }
+    };
+
+    fetchEpisodes();
+
+    const interval = setInterval(fetchEpisodes, 5000); // Refresh every 5 seconds
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <>
-      {newPostLink && (
-        <div>
-          {/* Display the new post link inside the BobsNews component */}
-          <p>New Post: <a href={newPostLink} target="_blank" rel="noopener noreferrer">{newPostLink}</a></p>
-        </div>
+    <div className="episode-container">
+      {newEpisodes.length > 0 && (
+        <>
+          {newEpisodes.map((episode, index) => (
+            <div key={index} className="episode-box">
+              <h3>{episode.title}</h3>
+              <p>{episode.subtitle}</p>
+              <a href={episode.link} target="_blank" rel="noopener noreferrer">
+                Listen
+              </a>
+              {episode.audio && episode.audio[0] && (
+                <audio controls>
+                  <source src={episode.audio[0].url} type={episode.audio[0].mimeType} />
+                </audio>
+              )}
+              {episode.poster && (
+                <img src={episode.poster} alt={episode.title} />
+              )}
+            </div>
+          ))}
+        </>
       )}
-    </>
+    </div>
   );
 };
 
