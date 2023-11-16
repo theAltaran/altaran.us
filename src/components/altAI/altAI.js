@@ -35,8 +35,8 @@ const AltAI = () => {
       {/* WordPressWatcher
       <div className={styles.wordpressWatcherContainer}>
         <WordPressWatcher />
-      </div>
-    </div> */}
+      </div> */}
+    </div>
   );
 };
 
