@@ -8,11 +8,9 @@ const BardChatBot = () => {
 
   const handleSendMessage = async () => {
     setIsLoading(true);
-  
+
     try {
-      const conversationId = "c_1c6437b0245c6e1f";
-  
-      const response = await fetch("http://127.0.0.1:5000/bard", {
+      const response = await fetch("https://bard.altaran.duckdns.org/bard", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -21,11 +19,11 @@ const BardChatBot = () => {
           text: userMessage,
         }),
       });
-  
-      const responseData = await response.text(); // Use text() instead of json()
-  
-      console.log("Response data:", responseData); // Log the response data
-  
+
+      const responseData = await response.text();
+
+      console.log("Response data:", responseData);
+
       setIsLoading(false);
 
       // Add the user's message to the chat history only if it's not empty
@@ -36,11 +34,10 @@ const BardChatBot = () => {
         ]);
       }
 
-      if (data) {
-        // Add the bot's response to the chat history
+      if (responseData) {
         setChatHistory((prevChatHistory) => [
           ...prevChatHistory,
-          { role: "bot", content: data },
+          { role: "bot", content: responseData },
         ]);
       } else {
         console.error("No valid response received from the Bard API.");
