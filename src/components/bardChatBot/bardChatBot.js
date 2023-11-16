@@ -10,19 +10,16 @@ const BardChatBot = () => {
     setIsLoading(true);
 
     try {
-      const apiKey = process.env.REACT_APP_BARD_API_KEY; // Fetch the API key from .env file
+      // Remove the API key since it's not needed for this API
       const conversationId = "c_1c6437b0245c6e1f"; // Replace with the conversation ID you want to use
 
-      const response = await fetch("https://bard.altaran.duckdns.org/api/bard", {
+      const response = await fetch("https://bard.altaran.duckdns.org/bard", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          query: userMessage,
-          api_key: apiKey,
-          conversation_id: conversationId,
+          text: userMessage,
         }),
       });
 
@@ -37,11 +34,11 @@ const BardChatBot = () => {
         ]);
       }
 
-      if (data.content) {
+      if (data) {
         // Add the bot's response to the chat history
         setChatHistory((prevChatHistory) => [
           ...prevChatHistory,
-          { role: "bot", content: data.content },
+          { role: "bot", content: data },
         ]);
       } else {
         console.error("No valid response received from the Bard API.");
