@@ -7,7 +7,7 @@ const WordPressWatcher = () => {
   useEffect(() => {
     const fetchEpisodes = async () => {
       try {
-        const response = await fetch("https://bobsnews.altaran.us//wp-json/podlove/v2/episodes"); // Replace with the actual API endpoint for your episode data
+        const response = await fetch("https://bobsnews.altaran.us/wp-json/podlove/v2/episodes"); // Replace with the actual API endpoint for your episode data
         const data = await response.json();
 
         setNewEpisodes(data);
