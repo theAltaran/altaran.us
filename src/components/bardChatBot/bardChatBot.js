@@ -8,12 +8,11 @@ const BardChatBot = () => {
 
   const handleSendMessage = async () => {
     setIsLoading(true);
-
+  
     try {
-      // Remove the API key since it's not needed for this API
-      const conversationId = "c_1c6437b0245c6e1f"; // Replace with the conversation ID you want to use
-
-      const response = await fetch("https://bard.altaran.duckdns.org/bard", {
+      const conversationId = "c_1c6437b0245c6e1f";
+  
+      const response = await fetch("http://127.0.0.1:5000/bard", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -22,8 +21,11 @@ const BardChatBot = () => {
           text: userMessage,
         }),
       });
-
-      const data = await response.json();
+  
+      const responseData = await response.text(); // Use text() instead of json()
+  
+      console.log("Response data:", responseData); // Log the response data
+  
       setIsLoading(false);
 
       // Add the user's message to the chat history only if it's not empty
