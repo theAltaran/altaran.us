@@ -3,7 +3,7 @@ import BobChatbot from "../bobBot/bobChatbot";
 import BobsNews from "../bobsnews/bobsnews";
 import styles from "./altAI.module.css";
 import BardChatBot from "../bardChatBot/bardChatBot";
-import WordPressWatcher from "../WordPressWatcher/WordPressWatcher";
+// import WordPressWatcher from "../WordPressWatcher/WordPressWatcher";
 
 const AltAI = () => {
   const [conversationHistory] = React.useState([]);
@@ -32,11 +32,11 @@ const AltAI = () => {
         <BobsNews />
       </div>
 
-      WordPressWatcher
+      {/* WordPressWatcher
       <div className={styles.wordpressWatcherContainer}>
         <WordPressWatcher />
       </div>
-    </div>
+    </div> */}
   );
 };
 
