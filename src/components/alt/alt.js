@@ -50,12 +50,12 @@ const Alt = () => (
     <u1 className={styles.list1}>...and things I enjoy</u1>
      <li className={styles.listItems}>Browser NES Emulator
    <button className={styles.button1} onClick={nesClick}>Open/Close</button></li>
-  <div id="nesHide" className={styles.NES}>
+  {/* <div id="nesHide" className={styles.NES}>
    <IframeResizer  className={styles.iframe2} src="https://nests.vercel.app/"></IframeResizer>
    <br/>
    <p className={styles.nesRom}>You need to supply your own NES rom.....Im not gonna help you pirate!</p>
    <p className={styles.nesControls}><img src="nesControls.png" alt="alt" /></p>  
-  </div>
+  </div> */}
   <br/>
 <div className={styles.Weirdstuff} id="weirdStuff">
     <br/>
