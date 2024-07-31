@@ -5,7 +5,7 @@ const LastClick = () => {
   const [lastClick, setClicks] = useState([])
 
   const fetchData = () => {
-    fetch("https://api.altaran.us/")
+    fetch("http://api.altaran.duckdns.org/")
       .then(response => {
         return response.json()
       })
