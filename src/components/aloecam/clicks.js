@@ -18,6 +18,7 @@ const SOUND_FILES = [
 const Clicks = () => {
   const [clicks, setClicks] = useState([]);
   const [selectedSound, setSelectedSound] = useState('doh.mp3'); // Default sound
+  const [disabled, setDisabled] = useState(false);
 
   const fetchData = () => {
     fetch("http://api.altaran.duckdns.org/clicks")
@@ -30,9 +31,15 @@ const Clicks = () => {
   }, []);
 
   function clickity2() {
+    if (disabled) return; // Exit function if disabled
+
+    setDisabled(true);
     startMotor1();
     Sound1(selectedSound);
     fetchData();
+
+    // Re-enable button after 3500 ms
+    setTimeout(() => setDisabled(false), 3500);
   }
 
   return (
@@ -41,7 +48,11 @@ const Clicks = () => {
         <div>
           {clicks.map(user => (
             <p className={styles.dropCount} key={user.id}>
-              <button className={styles.button1} onClick={clickity2}>
+              <button
+                className={styles.button1}
+                onClick={clickity2}
+                disabled={disabled} // Disable button when disabled state is true
+              >
                 Drop it Like It's Hot
               </button>
               {user.id} Drops to Date: {user.clicks}
