@@ -5,7 +5,7 @@ const UserCount = () => {
   const [aloeCam, setCount] = useState([])
 
   const fetchData = () => {
-    fetch("http://api.altaran.duckdns.org/userCount")
+    fetch("https://api.altaran.us/userCount")
       .then(response => {
         return response.json()
       })
