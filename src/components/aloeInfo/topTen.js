@@ -8,7 +8,7 @@ const TopTenClicks = () => {
   const [clicks, setClicks] = useState([])
 
   const fetchData = () => {
-    fetch("http://api.altaran.duckdns.org/top10")
+    fetch("http://api.altaran.us/top10")
       .then(response => {
         return response.json()
       })
