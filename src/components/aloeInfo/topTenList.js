@@ -22,7 +22,7 @@ const TopTenClicks = () => {
   }, [])
 
   const fetchData2 = () => {
-    fetch("http://api.altaran.duckdns.org/top25")
+    fetch("http://api.altaran.us/top25")
       .then(response => {
         return response.json()
       })
