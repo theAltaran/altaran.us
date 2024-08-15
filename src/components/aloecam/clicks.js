@@ -12,12 +12,13 @@ const SOUND_FILES = [
   'chunky.mp3',
   'mario.mp3',
   'idiots.mp3',
-  'swimming.mp3'
+  'swimming.mp3',
+  'guesswhosback.mp3'
 ];
 
 const Clicks = () => {
   const [clicks, setClicks] = useState([]);
-  const [selectedSound, setSelectedSound] = useState('doh.mp3'); // Default sound
+  const [selectedSound, setSelectedSound] = useState('guesswhosback.mp3'); // Default sound
   const [disabled, setDisabled] = useState(false);
 
   const fetchData = () => {
