@@ -21,7 +21,7 @@ const Clicks = () => {
   const [disabled, setDisabled] = useState(false);
 
   const fetchData = () => {
-    fetch("http://api.altaran.duckdns.org/clicks")
+    fetch("http://api.altaran.us/clicks")
       .then(response => response.json())
       .then(data => setClicks(data));
   };
