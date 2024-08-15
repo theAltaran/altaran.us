@@ -37,7 +37,7 @@ const Clicks = () => {
     // Re-enable the button after 3 seconds
     setTimeout(() => {
       setIsButtonDisabled(false);
-    }, 3000);
+    }, 4000);
   }
 
   return (
