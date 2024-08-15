@@ -2,16 +2,27 @@ import React, { useEffect, useState } from "react";
 import styles from './aloecam.module.css';
 import startMotor1 from "../aloecam/startmotor1";
 import Sound1 from "../randomButton/sound1";
-// import lightsOn from "./lightsOn";
+
+// List of available sound files
+const SOUND_FILES = [
+  'hohoho.mp3',
+  'HappyNewYear.mp3',
+  'haha.mp3',
+  'doh.mp3',
+  'chunky.mp3',
+  'mario.mp3',
+  'idiots.mp3',
+  'swimming.mp3'
+];
 
 const Clicks = () => {
   const [clicks, setClicks] = useState([]);
-  const [isButtonDisabled, setIsButtonDisabled] = useState(false); // State to track if the button is disabled
+  const [selectedSound, setSelectedSound] = useState('doh.mp3'); // Default sound
 
   const fetchData = () => {
     fetch("http://api.altaran.duckdns.org/clicks")
-      .then((response) => response.json())
-      .then((data) => setClicks(data));
+      .then(response => response.json())
+      .then(data => setClicks(data));
   };
 
   useEffect(() => {
@@ -19,41 +30,21 @@ const Clicks = () => {
   }, []);
 
   function clickity2() {
-    if (isButtonDisabled) return; // Prevents function execution if button is disabled
-
-    setIsButtonDisabled(true); // Disable the button
-    // lightsOn();
     startMotor1();
-    // Sound1('hohoho.mp3')
-    // Sound1('HappyNewYear.mp3')
-    // Sound1('haha.mp3');
-    Sound1('doh.mp3');
-    // Sound1('chunky.mp3');
-    // Sound1('mario.mp3');
-    // Sound1('idiots.mp3');
-    // Sound1('swimming.mp3')
+    Sound1(selectedSound);
     fetchData();
-
-    // Re-enable the button after 3 seconds
-    setTimeout(() => {
-      setIsButtonDisabled(false);
-    }, 4000);
   }
 
   return (
     <div className={styles.clicks}>
       {clicks.length > 0 && (
         <div>
-          {clicks.map((user) => (
+          {clicks.map(user => (
             <p className={styles.dropCount} key={user.id}>
-              <button
-                className={styles.button1}
-                onClick={clickity2}
-                disabled={isButtonDisabled} // Disables the button when state is true
-              >
-                Drop it Like Its Hot
+              <button className={styles.button1} onClick={clickity2}>
+                Drop it Like It's Hot
               </button>
-              Drops to Date: {user.clicks}
+              {user.id} Drops to Date: {user.clicks}
             </p>
           ))}
         </div>
