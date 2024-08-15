@@ -38,8 +38,8 @@ const Clicks = () => {
     Sound1(selectedSound);
     fetchData();
 
-    // Re-enable button after 3500 ms
-    setTimeout(() => setDisabled(false), 3500);
+    // Re-enable button after 5000 ms
+    setTimeout(() => setDisabled(false), 5000);
   }
 
   return (
