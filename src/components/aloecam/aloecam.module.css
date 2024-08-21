@@ -127,3 +127,12 @@ h6 {
   font-style: italic;
   color: #666;
 }
+
+
+.selector {
+  margin-top: 10px; /* Adjust this value as needed */
+}
+
+.selector select {
+  margin-bottom: 20px; /* Space below the selector */
+}

@@ -36,7 +36,7 @@ const Clicks = () => {
 
     setDisabled(true);
     startMotor1();
-    Sound1(selectedSound);
+    Sound1(selectedSound); // Use the selected sound
     fetchData();
 
     // Re-enable button after 5000 ms
@@ -61,6 +61,20 @@ const Clicks = () => {
           ))}
         </div>
       )}
+      <div className={styles.selector}>
+        <label htmlFor="soundSelector"></label>
+        <select
+          id="soundSelector"
+          value={selectedSound}
+          onChange={(e) => setSelectedSound(e.target.value)}
+        >
+          {SOUND_FILES.map((sound, index) => (
+            <option key={index} value={sound}>
+              {sound}
+            </option>
+          ))}
+        </select>
+      </div>
     </div>
   );
 };
