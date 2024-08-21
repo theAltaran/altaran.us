@@ -22,7 +22,7 @@ function App() {
           <Route path="/altAI" element={<ALTai />} />
           <Route path="/space" element={<Space />} />
           <Route path="/spaceXNews" element={<SpaceXNews />} /> 
-          <Route path="/spawnCalc" element={<SpawnCalculator />} />
+          {/* <Route path="/spawnCalc" element={<SpawnCalculator />} /> */}
 
         </Routes>
       </div>
