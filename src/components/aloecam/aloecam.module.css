@@ -129,10 +129,47 @@ h6 {
 }
 
 
-.selector {
-  margin-top: 10px; /* Adjust this value as needed */
+/* Style for the label */
+.selector label {
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 5px; /* Space between label and dropdown */
 }
 
+/* Add styles to match the dropdown with button CSS */
 .selector select {
-  margin-bottom: 20px; /* Space below the selector */
+  background: linear-gradient(to bottom, #dfbdfa 5%, #270850 100%);
+  background-color: #dfbdfa;
+  border: 1px solid #c584f3;
+  border-radius: 6px;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-shadow: 0px 1px 0px #9752cc;
+  box-shadow: inset 0px 1px 0px 0px #efdcfb;
+  margin: 0; /* Remove bottom margin to avoid spacing issues */
+  appearance: none; /* Remove default dropdown arrow */
+  -webkit-appearance: none; /* For WebKit browsers */
+  -moz-appearance: none; /* For Firefox */
+  width: 100%; /* Make dropdown responsive */
+  max-width: 300px; /* Set a max-width to prevent it from becoming too wide */
+}
+
+/* Add a custom arrow for the dropdown */
+.selector::after {
+  content: '▼';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #ffffff;
+}
+.userCounts {
+  color: white;
+  margin-top: 20px; /* Adjust the value as needed for the desired space */
 }

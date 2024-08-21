@@ -62,7 +62,7 @@ const Clicks = () => {
         </div>
       )}
       <div className={styles.selector}>
-        <label htmlFor="soundSelector"></label>
+        <label htmlFor="soundSelector">Change Sound?</label>
         <select
           id="soundSelector"
           value={selectedSound}

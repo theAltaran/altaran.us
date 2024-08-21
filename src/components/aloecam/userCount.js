@@ -1,34 +1,31 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react";
 import styles from './aloecam.module.css';
 
 const UserCount = () => {
-  const [aloeCam, setCount] = useState([])
+  const [aloeCam, setCount] = useState([]);
 
   const fetchData = () => {
     fetch("https://api.altaran.us/userCount")
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
-        setCount(data)
-      })
-  }
+      .then(response => response.json())
+      .then(data => setCount(data));
+  };
 
   useEffect(() => {
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
 
   return (
     <div className={styles.userCounts}>
       {aloeCam.length > 0 && (
-        <div>Total Unique* Users to Date:
-          {aloeCam.map(user => (<p key={user.id}>{user.aloeCam}</p>
+        <div>
+          <div>Total Unique* Users to Date:</div>
+          {aloeCam.map(user => (
+            <p key={user.id}>{user.aloeCam}</p>
           ))}
-
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default UserCount
+export default UserCount;

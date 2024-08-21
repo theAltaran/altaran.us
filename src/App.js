@@ -8,6 +8,7 @@ import Space from "./components/space/space";
 import SpaceXNews from "./components/space/spaceXNews";
 
 import Navbar2 from "./components/navbar2/navbar2";
+import SpawnCalculator from "./components/spawnCalc/calc";
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
           <Route path="/altAI" element={<ALTai />} />
           <Route path="/space" element={<Space />} />
           <Route path="/spaceXNews" element={<SpaceXNews />} /> 
+          <Route path="/spawnCalc" element={<SpawnCalculator />} />
+
         </Routes>
       </div>
     </div>
