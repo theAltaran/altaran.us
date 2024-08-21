@@ -1,0 +1,501 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mushroom Substrate and Spawn Calculator</title>
+    <meta name="description" content="Custom Mushroom Substrate and Spawn Calculator">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:400,700|Cormorant+Garamond:400,700|Cormorant+Upright|Cuprum:400,700|Dosis:400,700|Halant:400,700|Kalam:400,700|Laila:400,700|Lekton:400,700|Nunito:400,700|Open+Sans:400,700|Raleway:400,700|Roboto+Slab:400,700|Roboto:400,700|Ubuntu:400,700" rel="stylesheet">
+
+    <style media="screen">
+      html, body {
+        padding: 30px 0;
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+        min-height: 100%;
+        box-sizing: border-box;
+      }
+
+      .client-socials {
+          display: flex;
+      }
+
+      .client-socials a {
+          height: max-content;
+          display: flex;
+          text-decoration: none !important;
+      }
+
+
+      .layout-vertical > div {
+          max-width: 1200px;
+          width: 100%;
+      }
+
+      .layout-vertical .client-logo {
+        padding-top: 60px;
+        margin-bottom: 40px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .layout-column-container {
+          display: flex;
+          width: 100%;
+          height: auto;
+          max-width: 1200px;
+          padding: 0 20px;
+      }
+
+      .layout-vertical .client-logo img, .layout-column .client-logo img, .layout-vertical object, .layout-column object {
+        max-height: 60px;
+        height: 60px;
+        min-height: 60px;
+        max-width: 100%;
+        object-fit: contain;
+      }
+
+      .layout-column .client-logo {
+        padding-bottom: 40px;
+        display: flex;
+      }
+
+      .layout-vertical .client-title, .layout-column .client-title {
+        text-transform: uppercase;
+        padding-top: 50px;
+        margin-bottom: 40px;
+      }
+
+      .layout-column .calconic-calculator.additional-height {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      .layout-vertical .client-title {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+
+      .layout-vertical .client-calculator-description {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+      }
+
+      .client-calculator-description p {
+          line-height: 1.5;
+      }
+
+      .layout-vertical .client-calculator-description p {
+        text-align: center;
+      }
+
+      .layout-column .client-calculator-description {
+          margin-bottom: 50px;
+      }
+
+      .layout-column .client-calculator-description p {
+        text-align: left;
+      }
+
+      .layout-vertical .client-calculator-description p {
+        width: 100%;
+        max-width: 600px;
+      }
+
+      .layout-column .client-calculator-description p {
+        width: 100%;
+        max-width: 400px;
+      }
+
+
+      .layout-vertical.mobile {
+          display: none !important;
+      }
+
+      .layout-vertical  {
+          display: flex !important;
+          justify-content: center;
+          flex-flow: column;
+          align-items: center;
+      }
+
+      .layout-vertical, .layout-column {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        box-sizing: border-box;
+
+      }
+
+      .layout-vertical {
+          display: none;
+          padding: 0 200px 80px;
+
+      }
+
+      .layout-column {
+        padding-top: 80px !important;
+        padding-bottom: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .layout-vertical .client-information-block {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        margin-top: 50px;
+      }
+
+      .layout-column .client-information-positioning {
+        height: 100%;
+      }
+
+      .layout-column .client-information-positioning.additional-spacing {
+          justify-content: space-between;
+      }
+
+      .layout-vertical .client-information-block .client-contacts :not(:last-child), .layout-column .client-information-block .client-contacts :not(:last-child) {
+        margin-bottom: 10px;
+      }
+
+      .layout-vertical .client-information-block .client-contacts span, .layout-column .client-information-block .client-contacts span {
+          line-height: 1;
+      }
+
+      .layout-vertical .client-information-block .client-socials {
+        padding-top: 10px;
+      }
+
+      .layout-column .client-socials {
+        padding-top: 20px;
+      }
+
+      .layout-column .client-socials a {
+          margin: 20px 0 35px;
+      }
+
+      .layout-vertical .client-information-block .client-contacts, .layout-column .client-information-block .client-contacts {
+        display: flex;
+        flex-flow: column;
+      }
+
+      .layout-vertical .client-information-block .client-socials a svg,  .layout-column .client-information-block .client-socials a svg {
+        width: 30px;
+        cursor: pointer;
+      }
+
+      .layout-vertical .client-information-block .client-socials :not(:last-child), .layout-column .client-information-block .client-socials :not(:last-child) {
+        margin-right: 10px;
+      }
+
+      body {
+        display: flex;
+        padding: 30px 0;
+        background-color: #eee;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .calconic-calculator {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .calconic-calculator.with-layouts {
+        width: 100% !important;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .calconic-calculator.full-height {
+        min-height: 100%;
+      }
+
+      .layout-column .client-block .client-information-positioning {
+        height: auto;
+        display: flex;
+        flex-flow: column;
+      }
+
+      .calconic-logo-wrapper {
+        left: 30px;
+        bottom: 30px;
+        position: fixed;
+      }
+
+      .additional-links {
+        width: auto;
+      }
+
+      .additional-links a {
+        color: #999;
+        font-size: 13px;
+        display: inline-block;
+        margin-right: 10px;
+        text-decoration: none;
+        font-family: 'lato', sans-serif;
+      }
+
+      .calconic-logo {
+        width: 190px;
+      }
+
+      .calconic-logo a {
+        text-decoration: none;
+      }
+
+      .lumi-calconic {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .calconic-logo h3 {
+        color: #999;
+        font-size: 10px;
+        font-weight: 700;
+        font-family: 'lato', sans-serif;
+        text-transform: uppercase;
+        transform: translateY(6px);
+        margin-left: 3px;
+      }
+
+      .calconic-logo img {
+        max-width: 100%;
+      }
+
+      .layout-column {
+        display: flex;
+      }
+
+      .layout-column .client-block {
+        width: 50%;
+        height: auto;
+        margin-right: 80px;
+      }
+
+      .layout-column.desktop, .layout-vertical.desktop {
+        display: none;
+      }
+
+      .layout-vertical.mobile {
+        display: none;
+      }
+
+      .loader-active {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 50%;
+          position: absolute;
+          top: 0;
+          left: 0;
+      }
+
+      .layout-vertical .calc-block {
+          width: 100%;
+          position: relative;
+      }
+
+      .calc-block {
+          position: relative;
+          width: 50%;
+      }
+
+      .layout-vertical .calconic-calculator, .layout-column .calconic-calculator {
+          opacity: 0;
+      }
+
+      svg g {
+          stroke-width: 2 !important;
+          stroke-opacity: 1 !important;
+      }
+
+      @media (max-width: 1050px) {
+        body {
+          flex-direction: column;
+          align-items: center;
+          padding: 5px 5px 100px;
+        }
+
+        .layout-vertical.mobile {
+          display: flex !important;
+          flex-flow: column;
+        }
+
+        .layout-vertical.mobile .client-logo {
+            margin: 0 20px 40px;
+        }
+
+        .layout-vertical.mobile .client-title {
+            margin: 0 20px 40px;
+        }
+
+        .layout-vertical.mobile .client-calculator-description {
+            margin: 0 20px 50px;
+        }
+
+        .layout-vertical.mobile .client-information-block {
+            margin: 50px 20px 0;
+        }
+
+        .layout-vertical .client-information-block {
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .layout-column.desktop, .layout-vertical.desktop {
+          display: none !important;
+        }
+
+        .layout-vertical .client-contacts span {
+            text-align: center;
+        }
+
+        .layout-vertical .client-contacts {
+            margin-bottom: 20px;
+        }
+
+        .calconic-calculator {
+          width: 100%;
+          max-width: 100%;
+          box-shadow: unset;
+        }
+
+        .layout-vertical .client-calculator-description p {
+            width: 100%;
+        }
+
+        .layout-vertical {
+            padding-left: 16px;
+            padding-right: 16px;
+            min-width: 350px;
+            max-width: 100%;
+        }
+
+        .calconic-logo {
+            left: unset;
+            top: unset;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .calconic-logo-wrapper {
+            top: unset;
+            left: unset;
+            margin-top: 50px;
+            position: relative;
+          }
+
+        .additional-links {
+          width: 100%;
+        }
+
+        .additional-links a {
+          width: 100%;
+          margin-bottom: 7px;
+        }
+      }
+
+      
+    </style>
+
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MZ5JHMV');
+    </script>
+
+      <script data-storage='calculator-storage'>
+        (function() {
+          window.calconic = {
+            status: 200,
+            calculator:  {"_id":"62af716fb4a2d20029266e0f","settings":{"sites":[],"showName":true,"decimalSeparator":".","thousandsSeparator":"not","name":"Mushroom Substrate and Spawn Calculator"},"shopify":{"products":[]},"active":true,"advanced":"","elements":[{"ref":"#1","elementType":"input","descriptor":"Numeric input","settings":{"min":0,"max":200,"defaultValue":0,"decimalPlaces":2,"step":1,"useMouseControls":false,"prefix":"in","postfix":""},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Monotub Length","hint":"Length of your monotub/grow chamber in inches","showLabel":true,"showElement":true,"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#ebebeb"},"backgroundColor2":{"active":false,"value":"#000000"},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"fieldText":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"borderSize":{"active":false,"value":2},"borderRadius":{"active":false,"value":0},"borderColor":{"active":false,"value":"#ebebeb"}},"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#ebebeb"},"backgroundColor2":{"active":false,"value":"#000000"},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"fieldText":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"borderSize":{"active":false,"value":2},"borderRadius":{"active":false,"value":0},"borderColor":{"active":false,"value":"#ebebeb"}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#ebebeb"},"backgroundColor2":{"active":false,"value":"#000000"},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"fieldText":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"borderSize":{"active":false,"value":2},"borderRadius":{"active":false,"value":0},"borderColor":{"active":false,"value":"#ebebeb"}}}},{"ref":"#3","elementType":"input","descriptor":"Numeric input","settings":{"min":0,"max":200,"defaultValue":0,"decimalPlaces":2,"step":1,"useMouseControls":false,"prefix":"in","postfix":""},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Monotub Width","hint":"Width of your monotub/grow chamber in inches","showLabel":true,"showElement":true,"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#ebebeb"},"backgroundColor2":{"active":false,"value":"#000000"},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"fieldText":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"borderSize":{"active":false,"value":2},"borderRadius":{"active":false,"value":0},"borderColor":{"active":false,"value":"#ebebeb"}},"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#ebebeb"},"backgroundColor2":{"active":false,"value":"#000000"},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"fieldText":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"borderSize":{"active":false,"value":2},"borderRadius":{"active":false,"value":0},"borderColor":{"active":false,"value":"#ebebeb"}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#ebebeb"},"backgroundColor2":{"active":false,"value":"#000000"},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"fieldText":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"borderSize":{"active":false,"value":2},"borderRadius":{"active":false,"value":0},"borderColor":{"active":false,"value":"#ebebeb"}}}},{"ref":"#4","elementType":"input","descriptor":"Numeric input","settings":{"min":1,"max":5,"defaultValue":3,"decimalPlaces":2,"step":1,"useMouseControls":false,"prefix":"in","postfix":""},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Substrate Depth","hint":"Enter your desired substrate depth in inches","showLabel":true,"showElement":true,"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#ebebeb"},"backgroundColor2":{"active":false,"value":"#000000"},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"fieldText":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"borderSize":{"active":false,"value":2},"borderRadius":{"active":false,"value":0},"borderColor":{"active":false,"value":"#ebebeb"}},"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#ebebeb"},"backgroundColor2":{"active":false,"value":"#000000"},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"fieldText":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"borderSize":{"active":false,"value":2},"borderRadius":{"active":false,"value":0},"borderColor":{"active":false,"value":"#ebebeb"}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#ebebeb"},"backgroundColor2":{"active":false,"value":"#000000"},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"fieldText":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"borderSize":{"active":false,"value":2},"borderRadius":{"active":false,"value":0},"borderColor":{"active":false,"value":"#ebebeb"}}}},{"ref":"*1","elementType":"divider","descriptor":"Separating line","advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Separating line","hint":"","showLabel":true,"showElement":true,"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#999999"}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#999999"}}},"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#999999"}}},{"ref":"*2","elementType":"title","descriptor":"Title","settings":{"content":"Monotub Dimensions"},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Title","hint":"","showLabel":true,"showElement":true,"style":{"backgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"text":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":24,"color":"#000000"}}},"extendedStyle":{"sm":{"backgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"text":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":24,"color":"#000000"}}},"md":{"backgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"text":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":24,"color":"#000000"}}}}},{"ref":"*3","elementType":"title","descriptor":"Title","settings":{"content":"Spawn to Substrate Ratio"},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Title","hint":"","showLabel":true,"showElement":true,"style":{"backgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"text":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":24,"color":"#000000"}}},"extendedStyle":{"sm":{"backgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"text":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":24,"color":"#000000"}}},"md":{"backgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"text":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":24,"color":"#000000"}}}}},{"ref":"#5","elementType":"radio","descriptor":"Radio box","settings":{"options":[{"value":1,"label":"One-to-one (1:1)","ref":"o1","elementType":"option"},{"label":"One-to-two (1:2)","value":2,"ref":"o2","elementType":"option"},{"label":"One-to-three (1:3)","value":3,"ref":"o3","elementType":"option"},{"label":"One-to-four (1:4)","value":4,"ref":"o4","elementType":"option"},{"label":"One-to-five (1:5)","value":5,"ref":"o5","elementType":"option"},{"label":"One-to-six (1:6)","value":6,"ref":"o6","elementType":"option"}],"defaultValue":0,"direction":"vertical"},"advancedSettings":{"visibility":{"active":true,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Spawn:Substrate Ratio","hint":"Enter your desired ratio","showLabel":true,"showElement":true,"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#ebebeb"},"backgroundColor2":{"active":false,"value":"#000000"},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"borderSize":{"active":false,"value":2},"borderRadius":{"active":false,"value":0},"borderColor":{"active":false,"value":"#ebebeb"}},"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#ebebeb"},"backgroundColor2":{"active":false,"value":"#000000"},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"borderSize":{"active":false,"value":2},"borderRadius":{"active":false,"value":0},"borderColor":{"active":false,"value":"#ebebeb"}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#ebebeb"},"backgroundColor2":{"active":false,"value":"#000000"},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":12,"color":"#000000"}},"borderSize":{"active":false,"value":2},"borderRadius":{"active":false,"value":0},"borderColor":{"active":false,"value":"#ebebeb"}}}},{"ref":"#6","elementType":"formula","descriptor":"Formula","settings":{"decimalPlaces":2,"expression":"#1*#3*#4","prefix":"","postfix":""},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Total Volume","hint":"","showLabel":false,"showElement":false,"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"revealAfterSubmission":false,"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}}},"showInEmailOnly":false},{"ref":"#7","elementType":"formula","descriptor":"Formula","settings":{"decimalPlaces":0,"expression":"1","prefix":"","postfix":""},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Ratio Constant","hint":"","showLabel":false,"showElement":false,"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"revealAfterSubmission":false,"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}}},"showInEmailOnly":false},{"ref":"#8","elementType":"formula","descriptor":"Formula","settings":{"decimalPlaces":0,"expression":"#5+#7","prefix":"","postfix":""},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Ratio calculation one","hint":"","showLabel":false,"showElement":false,"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"revealAfterSubmission":false,"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}}},"showInEmailOnly":false},{"ref":"#9","elementType":"formula","descriptor":"Formula","settings":{"decimalPlaces":2,"expression":"#7/#8","prefix":"","postfix":""},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Ratio Calculation - % of Spawn to Total","hint":"","showLabel":false,"showElement":false,"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"revealAfterSubmission":false,"showInEmailOnly":false,"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}}}},{"ref":"#10","elementType":"formula","descriptor":"Formula","settings":{"decimalPlaces":2,"expression":"#5/#8","prefix":"","postfix":""},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Ratio Calculation % of Substrate  to Total","hint":"","showLabel":true,"showElement":false,"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"revealAfterSubmission":false,"showInEmailOnly":false,"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}}}},{"ref":"#11","elementType":"formula","descriptor":"Formula","settings":{"decimalPlaces":3,"expression":"(#14*0.0625)*#10","prefix":"","postfix":""},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Conversion of oz to lbs","hint":"","showLabel":true,"showElement":false,"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}}},"revealAfterSubmission":false},{"ref":"#12","elementType":"formula","descriptor":"Formula","settings":{"decimalPlaces":2,"expression":"#6*#13","prefix":"","postfix":""},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Total Quarts =  volume *  cubic inches to quarts","hint":"","showLabel":true,"showElement":false,"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}}},"revealAfterSubmission":false},{"ref":"#13","elementType":"formula","descriptor":"Formula","settings":{"decimalPlaces":4,"expression":"0.0173","prefix":"","postfix":""},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"cubic inchs to quarts constant","hint":"","showLabel":true,"showElement":false,"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}}},"revealAfterSubmission":false},{"ref":"#14","elementType":"formula","descriptor":"Formula","settings":{"decimalPlaces":2,"expression":"#18*18","prefix":"","postfix":""},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Total Oz","hint":"","showLabel":true,"showElement":false,"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}}},"revealAfterSubmission":false},{"ref":"#15","elementType":"formula","descriptor":"Formula","settings":{"decimalPlaces":2,"expression":"#18*18/16","prefix":"","postfix":""},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Total amount of spawn in lbs","hint":"","showLabel":true,"showElement":true,"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}}}},{"ref":"#16","elementType":"formula","descriptor":"Formula","settings":{"decimalPlaces":2,"expression":"#17*18/16","prefix":"","postfix":""},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Total amount of substrate in lbs","hint":"","showLabel":true,"showElement":true,"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}}}},{"ref":"#17","elementType":"formula","descriptor":"Formula","settings":{"decimalPlaces":2,"expression":"#12*#10","prefix":"","postfix":""},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Total amount of substrate in quarts","hint":"","showLabel":true,"showElement":true,"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}}}},{"ref":"#18","elementType":"formula","descriptor":"Formula","settings":{"decimalPlaces":2,"expression":"#12*#9","prefix":"","postfix":""},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Total amount of spawn in quarts","hint":"","showLabel":true,"showElement":true,"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":20},"paddingBottom":{"active":false,"value":20},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"text":{"active":false,"value":{"weight":"normal","font":"'Open Sans', sans-serif","size":36,"color":"#000000"}}}}},{"ref":"*4","elementType":"group","descriptor":"Element group","settings":{"layouts":{"lg":[],"md":[],"sm":[]},"defaultCollapsed":false,"collapsable":false,"isCollapsed":false},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Estimated Weight:  Use volume when possible. The exact weight will vary based on substrate makeup, spawn used, and other factors. This is only an estimate.","hint":"","showLabel":true,"showElement":true,"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":15},"paddingBottom":{"active":false,"value":15},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#ebebeb"},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"labelPaddingTop":{"active":false,"value":15},"labelPaddingBottom":{"active":false,"value":15},"labelPaddingLeft":{"active":false,"value":20},"labelPaddingRight":{"active":false,"value":20}},"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":15},"paddingBottom":{"active":false,"value":15},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#ebebeb"},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"labelPaddingTop":{"active":false,"value":15},"labelPaddingBottom":{"active":false,"value":15},"labelPaddingLeft":{"active":false,"value":20},"labelPaddingRight":{"active":false,"value":20}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":15},"paddingBottom":{"active":false,"value":15},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#ebebeb"},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"labelPaddingTop":{"active":false,"value":15},"labelPaddingBottom":{"active":false,"value":15},"labelPaddingLeft":{"active":false,"value":20},"labelPaddingRight":{"active":false,"value":20}}}},{"ref":"*5","elementType":"group","descriptor":"Element group","settings":{"layouts":{"lg":[],"md":[],"sm":[]},"defaultCollapsed":false,"collapsable":false,"isCollapsed":false},"advancedSettings":{"visibility":{"active":false,"defaultValue":0,"compiledRule":"","ruleset":[]}},"label":"Total amount of spawn and substrate needed by volume","hint":"","showLabel":true,"showElement":true,"style":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":15},"paddingBottom":{"active":false,"value":15},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#ebebeb"},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"labelPaddingTop":{"active":false,"value":15},"labelPaddingBottom":{"active":false,"value":15},"labelPaddingLeft":{"active":false,"value":20},"labelPaddingRight":{"active":false,"value":20}},"extendedStyle":{"sm":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":15},"paddingBottom":{"active":false,"value":15},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#ebebeb"},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"labelPaddingTop":{"active":false,"value":15},"labelPaddingBottom":{"active":false,"value":15},"labelPaddingLeft":{"active":false,"value":20},"labelPaddingRight":{"active":false,"value":20}},"md":{"elementBackgroundColor":{"active":false,"value":"#ffffff"},"paddingTop":{"active":false,"value":15},"paddingBottom":{"active":false,"value":15},"paddingLeft":{"active":false,"value":20},"paddingRight":{"active":false,"value":20},"backgroundColor":{"active":false,"value":"#ebebeb"},"label":{"active":false,"value":{"weight":"bold","font":"'Open Sans', sans-serif","size":13,"color":"#000000"}},"labelPaddingTop":{"active":false,"value":15},"labelPaddingBottom":{"active":false,"value":15},"labelPaddingLeft":{"active":false,"value":20},"labelPaddingRight":{"active":false,"value":20}}}}],"isModifiedByAdmin":false,"style":{"textGauge":{"text":{"color":"rgba(153, 153, 153, 1)","size":13,"font":"'Open Sans', sans-serif","weight":"regular"},"label":{"color":"#000000","size":13,"font":"'Open Sans', sans-serif","weight":"bold"},"title":{"color":"#000000","size":20,"font":"'Open Sans', sans-serif","weight":"bold"},"backgroundColor2":"#EBEBEB","backgroundColor":"rgba(246, 246, 246, 1)"},"mail":{"button":{"border":{"radius":4,"color":"#ebebeb","size":2},"text":{"color":"rgba(255, 255, 255, 1)","size":14,"font":"'Open Sans', sans-serif","weight":"bold"},"loaderColor":"rgba(74, 144, 226, 1)","confirmColor":"rgba(126, 211, 33, 1)","backgroundColor":"rgba(0, 0, 0, 1)"},"field":{"border":{"radius":4,"color":"rgba(225, 225, 225, 1)","size":1},"text":{"color":"rgba(74, 74, 74, 1)","size":13,"font":"'Open Sans', sans-serif","weight":"normal"},"backgroundColor":"rgba(255, 255, 255, 1)"},"backgroundColor":"#ffffff"},"gauge":{"backgroundColor2":"rgba(68, 68, 68, 1)","backgroundColor":"rgba(246, 246, 246, 1)"},"text":{"color":"#000000","size":13,"font":"'Open Sans', sans-serif","weight":"normal"},"slider":{"backgroundColor2":"#000000","backgroundColor":"rgba(225, 225, 225, 1)"},"formula":{"text":{"color":"rgba(255, 255, 255, 1)","size":32,"font":"'Open Sans', sans-serif","weight":"bold"},"label":{"color":"rgba(255, 255, 255, 1)","size":13,"font":"'Open Sans', sans-serif","weight":"bold"},"backgroundColor":"rgba(74, 74, 74, 1)"},"field":{"border":{"radius":4,"color":"rgba(225, 225, 225, 1)","size":1},"text":{"color":"#000000","size":13,"font":"'Open Sans', sans-serif","weight":"normal"},"backgroundColor2":"#000000","backgroundColor":"rgba(255, 255, 255, 1)"},"label":{"text":{"color":"#000000","size":13,"font":"'Open Sans', sans-serif","weight":"bold"}},"header":{"text":{"color":"#000000","size":20,"font":"'Open Sans', sans-serif","weight":"bold"},"backgroundColor":"#ebebeb"},"base":{"border":{"radius":10,"color":"#ebebeb","size":0},"paddingBottom":5,"paddingTop":5,"backgroundColor":"#ffffff","widthType":"dynamic","width":300,"paddingLeft":20,"paddingRight":20},"checkbox":{"border":{"radius":4,"color":"rgba(225, 225, 225, 1)","size":1},"backgroundColor":"rgba(255, 255, 255, 1)","backgroundColor2":"rgba(0, 0, 0, 1)"},"group":{"label":{"backgroundColor":"#ffffff","text":{"color":"#000000","size":13,"font":"'Open Sans', sans-serif","weight":"bold"},"paddingTop":5,"paddingBottom":5,"paddingLeft":20,"paddingRight":20},"paddingTop":5,"paddingBottom":5,"paddingLeft":20,"paddingRight":20},"select":{"backgroundColor":"#ffffff","activeBackgroundColor":"rgba(0, 0, 0, 0.7)","hoverBackgroundColor":"rgba(0, 0, 0, 0.7)","text":{"color":"#000000","size":13,"font":"'Open Sans', sans-serif","weight":"normal"},"activeText":{"color":"rgba(255, 255, 255, 1)","size":13,"font":"'Open Sans', sans-serif","weight":"normal"},"hoverText":{"color":"rgba(255, 255, 255, 1)","size":13,"font":"'Open Sans', sans-serif","weight":"normal"},"border":{"radius":4,"color":"rgba(225, 225, 225, 1)","size":1}},"h1":{"weight":"normal","color":"#000000","font":"'Open Sans', sans-serif","size":24,"textDecoration":"none"},"h2":{"weight":"normal","color":"#000000","font":"'Open Sans', sans-serif","size":18,"textDecoration":"none"},"h3":{"weight":"normal","color":"#000000","font":"'Open Sans', sans-serif","size":14,"textDecoration":"none"}},"layouts":{"lg":[{"w":6,"h":70,"x":0,"y":40,"i":"#1","minH":69,"moved":false,"static":false,"hidden":false},{"w":6,"h":70,"x":0,"y":110,"i":"#3","minH":69,"moved":false,"static":false,"hidden":false},{"w":6,"h":70,"x":0,"y":180,"i":"#4","minH":69,"moved":false,"static":false,"hidden":false},{"w":6,"h":11,"x":0,"y":250,"i":"*1","minH":7,"moved":false,"static":false,"hidden":false},{"w":6,"h":40,"x":0,"y":0,"i":"*2","minH":40,"moved":false,"static":false,"hidden":false},{"w":6,"h":40,"x":0,"y":261,"i":"*3","minH":40,"moved":false,"static":false,"hidden":false},{"w":6,"h":200,"x":0,"y":301,"i":"#5","minH":200,"moved":false,"static":false,"hidden":false},{"w":6,"h":70,"x":6,"y":0,"i":"#6","minH":10,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":6,"h":70,"x":6,"y":70,"i":"#7","minH":10,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":6,"h":70,"x":6,"y":140,"i":"#8","minH":10,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":6,"h":70,"x":6,"y":210,"i":"#9","minH":10,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":6,"h":70,"x":6,"y":280,"i":"#10","minH":20,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":6,"h":70,"x":6,"y":350,"i":"#11","minH":20,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":6,"h":70,"x":6,"y":490,"i":"#12","minH":20,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":6,"h":70,"x":6,"y":420,"i":"#13","minH":20,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":6,"h":70,"x":0,"y":501,"i":"#14","minH":20,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":6,"h":70,"x":0,"y":707,"i":"#15","minH":70,"moved":false,"static":false,"hidden":false},{"w":6,"h":70,"x":6,"y":707,"i":"#16","minH":70,"moved":false,"static":false,"hidden":false},{"w":6,"h":70,"x":6,"y":604,"i":"#17","minH":70,"moved":false,"static":false,"hidden":false},{"w":6,"h":70,"x":0,"y":604,"i":"#18","minH":70,"moved":false,"static":false,"hidden":false},{"w":12,"h":33,"x":0,"y":674,"i":"*4","minH":33,"moved":false,"static":false,"hidden":false},{"w":12,"h":33,"x":0,"y":571,"i":"*5","minH":33,"moved":false,"static":false,"hidden":false}],"md":[{"w":6,"h":70,"x":0,"y":0,"i":"#1","minH":70,"moved":false,"static":false,"hidden":false},{"w":6,"h":70,"x":0,"y":70,"i":"#3","minH":70,"moved":false,"static":false,"hidden":false},{"w":6,"h":70,"x":0,"y":140,"i":"#4","minH":70,"moved":false,"static":false,"hidden":false},{"w":6,"h":11,"x":0,"y":210,"i":"*1","minH":7,"moved":false,"static":false,"hidden":false},{"w":6,"h":40,"x":0,"y":221,"i":"*2","minH":40,"moved":false,"static":false,"hidden":false},{"w":6,"h":40,"x":0,"y":261,"i":"*3","minH":40,"moved":false,"static":false,"hidden":false},{"w":6,"h":200,"x":0,"y":301,"i":"#5","minH":200,"moved":false,"static":false,"hidden":false},{"w":6,"h":11,"x":0,"y":501,"i":"#6","minH":10,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":6,"h":70,"x":0,"y":512,"i":"#7","minH":10,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":6,"h":70,"x":0,"y":582,"i":"#8","minH":10,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":6,"h":70,"x":0,"y":652,"i":"#9","minH":10,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":6,"h":70,"x":0,"y":722,"i":"#10","minH":20,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":6,"h":70,"x":0,"y":792,"i":"#11","minH":20,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":6,"h":70,"x":0,"y":932,"i":"#12","minH":20,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":6,"h":70,"x":0,"y":862,"i":"#13","minH":20,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":6,"h":70,"x":0,"y":1002,"i":"#14","minH":20,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":6,"h":70,"x":0,"y":1105,"i":"#15","minH":70,"moved":false,"static":false,"hidden":false},{"w":6,"h":70,"x":0,"y":1175,"i":"#16","minH":70,"moved":false,"static":false,"hidden":false},{"w":6,"h":70,"x":0,"y":1348,"i":"#17","minH":70,"moved":false,"static":false,"hidden":false},{"w":6,"h":70,"x":0,"y":1278,"i":"#18","minH":70,"moved":false,"static":false,"hidden":false},{"w":6,"h":33,"x":0,"y":1072,"i":"*4","minH":33,"moved":false,"static":false,"hidden":false},{"w":6,"h":33,"x":0,"y":1245,"i":"*5","minH":33,"moved":false,"static":false,"hidden":false}],"sm":[{"w":3,"h":70,"x":0,"y":0,"i":"#1","minH":70,"moved":false,"static":false,"hidden":false},{"w":3,"h":70,"x":0,"y":70,"i":"#3","minH":70,"moved":false,"static":false,"hidden":false},{"w":3,"h":70,"x":0,"y":140,"i":"#4","minH":70,"moved":false,"static":false,"hidden":false},{"w":3,"h":11,"x":0,"y":210,"i":"*1","minH":7,"moved":false,"static":false,"hidden":false},{"w":3,"h":40,"x":0,"y":221,"i":"*2","minH":40,"moved":false,"static":false,"hidden":false},{"w":3,"h":40,"x":0,"y":261,"i":"*3","minH":40,"moved":false,"static":false,"hidden":false},{"w":3,"h":200,"x":0,"y":301,"i":"#5","minH":200,"moved":false,"static":false,"hidden":false},{"w":3,"h":11,"x":0,"y":501,"i":"#6","minH":10,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":3,"h":11,"x":0,"y":512,"i":"#7","minH":10,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":3,"h":11,"x":0,"y":523,"i":"#8","minH":10,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":3,"h":11,"x":0,"y":534,"i":"#9","minH":10,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":3,"h":20,"x":0,"y":545,"i":"#10","minH":20,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":3,"h":20,"x":0,"y":565,"i":"#11","minH":20,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":3,"h":20,"x":0,"y":605,"i":"#12","minH":20,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":3,"h":20,"x":0,"y":585,"i":"#13","minH":20,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":3,"h":20,"x":0,"y":625,"i":"#14","minH":20,"moved":false,"static":false,"hidden":true,"isDraggable":true,"isResizable":true},{"w":3,"h":70,"x":0,"y":691,"i":"#15","minH":70,"moved":false,"static":false,"hidden":false},{"w":3,"h":70,"x":0,"y":761,"i":"#16","minH":70,"moved":false,"static":false,"hidden":false},{"w":3,"h":70,"x":0,"y":947,"i":"#17","minH":70,"moved":false,"static":false,"hidden":false},{"w":3,"h":70,"x":0,"y":877,"i":"#18","minH":70,"moved":false,"static":false,"hidden":false},{"w":3,"h":46,"x":0,"y":645,"i":"*4","minH":46,"moved":false,"static":false,"hidden":false},{"w":3,"h":46,"x":0,"y":831,"i":"*5","minH":46,"moved":false,"static":false,"hidden":false}]},"owner":"62af6b6db4a2d20029266df5","newElementCount":{},"installable":false,"__v":0,"extendedStyle":{"md":{},"sm":{}},"displayEmbeddedLinks":true,"landingPageCustomization":null},
+          };
+          const self = document.querySelector('[data-storage="calculator-storage"]');
+
+          if (self) {
+            self.remove();
+          }
+        })();
+      </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZ5JHMV"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <script>
+        document.addEventListener('readystatechange', event => {
+            if (event.target.readyState === 'complete') {
+                if (!window.calconic.calculator.landingPageCustomization) {
+                    return;
+                }
+
+                if (window.calconic.calculator.landingPageCustomization.pageLayout === '0') {
+                    return;
+                }
+
+                const verticalContainer = document.querySelector('.layout-vertical');
+                if (!verticalContainer.classList.contains('mobile')) {
+                    verticalContainer.style.display = 'block';
+                }
+                setTimeout(() => {
+                    Array.from(document.querySelectorAll('.loader-active')).forEach(el => {
+                        el.style.display = 'none';
+                    });
+                    Array.from(document.querySelectorAll('.calconic-calculator')).forEach(el => {
+                        el.style.opacity = '1';
+                    });
+
+                    if (window.calconic.calculator.landingPageCustomization.pageLayout === '2') {
+                        const calcElement = document.querySelector('.calconic-calculator');
+                        const clientInformationPositioning = document.querySelector('.client-information-positioning');
+                        const clientLogo =  document.querySelector('.client-logo');
+                        const clientHeight = clientLogo.offsetHeight + clientInformationPositioning.offsetHeight;
+                        const calcHeight = calcElement.offsetHeight;
+
+                        if (clientHeight > calcHeight) {
+                            calcElement.classList.add('additional-height');
+                            calcElement.style.height = `${clientHeight}px`;
+                        } else if ( clientHeight < calcHeight ) {
+                            clientInformationPositioning.style.height = `${calcHeight - clientLogo.offsetHeight}px`;
+                            clientInformationPositioning.classList.add('additional-spacing');
+                        }
+                    }
+                }, 2000)
+
+                if (document.querySelector('.layout-column')) {
+                    document.querySelector('.layout-column').style.display = 'flex';
+                }
+            }});
+    </script>
+    
+      <div class="calconic-calculator with-layouts" data-calculatorid="62af716fb4a2d20029266e0f"></div>
+       
+      <script src="https://storage.googleapis.com/calconic-cdn/static/js/calconic.min.js"></script>
+    
+
+  </body>
+</html>
